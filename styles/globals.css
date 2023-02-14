@@ -26,6 +26,9 @@ ul {
 }
 
 /* HERO COMPONENT */
+.hero {
+  margin: 40px;
+}
 .hero-title {
   font-family: "Work Sans";
   font-style: normal;
@@ -50,7 +53,7 @@ ul {
   color: #ffffff;
   text-align: left;
   margin: 40px 0 0 0;
-  padding: 0px;
+  padding: 0 10px 0 0;
 }
 .hero-stats-num {
   font-family: "Space Mono";
@@ -65,4 +68,28 @@ ul {
   font-weight: 400;
   font-size: 23.99px;
   line-height: 160%;
+}
+.hero-img {
+  background-color: transparent;
+  margin: 5px 0 0 0;
+}
+.card-body {
+  background: #3b3b3b;
+  border-radius: 0px 0px 20px 20px;
+}
+.card-title {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 140%;
+  color: #ffffff;
+}
+.card-text {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
 }

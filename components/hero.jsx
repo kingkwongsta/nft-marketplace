@@ -9,7 +9,7 @@ import heroImage from "../public/images/Image Placeholder.png";
 
 export default function Hero() {
   return (
-    <Container>
+    <Container className="hero">
       <Row>
         <Col sm={7}>
           <h1 className="hero-title">Discover Digital Art & Collect NFTs</h1>
@@ -25,12 +25,12 @@ export default function Hero() {
               <li>
                 <span className="hero-stats-num">900+</span>
                 <br />
-                <span className="hero-stats-name">Total Sold</span>
+                <span className="hero-stats-name">Sold</span>
               </li>
               <li>
-                <span className="hero-stats-num">28000+</span>
+                <span className="hero-stats-num">2800+</span>
                 <br />
-                <span className="hero-stats-name">Total Auctions</span>
+                <span className="hero-stats-name">Auctions</span>
               </li>
               <li>
                 <span className="hero-stats-num">350+</span>
@@ -41,13 +41,15 @@ export default function Hero() {
           </div>
         </Col>
         <Col sm={5}>
-          <Card>
+          <Card className="hero-img">
             <Image
               src={heroImage}
               style={{ position: "relative", width: "100%", height: "100%" }}
             />
-            <Card.Title>Space Walking</Card.Title>
-            <Card.Text>Artist Here</Card.Text>
+            <Card.Body>
+              <Card.Title>Space Walking</Card.Title>
+              <Card.Text>Artist Here</Card.Text>
+            </Card.Body>
           </Card>
         </Col>
       </Row>
