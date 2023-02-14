@@ -23,19 +23,19 @@ export default function Hero() {
           <div className="hero-stats">
             <ul className="hero-stats-list">
               <li>
-                900+
+                <span className="hero-stats-num">900+</span>
                 <br />
-                Total Sold
+                <span className="hero-stats-name">Total Sold</span>
               </li>
               <li>
-                2800+
+                <span className="hero-stats-num">28000+</span>
                 <br />
-                Total Autions
+                <span className="hero-stats-name">Total Auctions</span>
               </li>
               <li>
-                250+
+                <span className="hero-stats-num">350+</span>
                 <br />
-                Artist
+                <span className="hero-stats-name">Artist</span>
               </li>
             </ul>
           </div>
