@@ -1,4 +1,51 @@
+* {
+  font-family: "Work Sans", "Space Mono";
+}
+body {
+  background-color: #2b2b2b;
+}
+ul {
+  list-style-type: none;
+}
+
+/* BUTTONS */
+.button-secondary {
+  height: 60px;
+  width: 225px;
+  background: #a259ff;
+  border-radius: 20px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
+}
+
+/* HERO COMPONENT */
+.hero-title {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 67px;
+  line-height: 110%;
+  color: #ffffff;
+  padding: 0 0 10px 0;
+}
+.hero-desc {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 160%;
+  color: #ffffff;
+  padding: 10px 0 40px 0;
+}
+.hero-stats-list {
+  display: flex;
+  justify-content: space-evenly;
+  color: #ffffff;
 }

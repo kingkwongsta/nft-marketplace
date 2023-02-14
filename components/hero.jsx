@@ -11,13 +11,15 @@ export default function Hero() {
   return (
     <Container>
       <Row>
-        <Col sm={8}>
+        <Col sm={7}>
           <h1 className="hero-title">Discover Digital Art & Collect NFTs</h1>
           <h3 className="hero-desc">
             A NFT Marketplace to discovery, buy, and sell. This is an example
             for my Portfolio.
           </h3>
-          <Button variant="primary">Get Started</Button>{" "}
+          <Button className="button-secondary" variant="primary">
+            Get Started
+          </Button>{" "}
           <div className="hero-stats">
             <ul className="hero-stats-list">
               <li>
@@ -38,7 +40,7 @@ export default function Hero() {
             </ul>
           </div>
         </Col>
-        <Col sm={4}>
+        <Col sm={5}>
           <Card>
             <Image
               src={heroImage}
