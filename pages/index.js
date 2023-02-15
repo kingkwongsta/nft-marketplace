@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Navigation from "../components/navigation";
 import Hero from "../components/hero";
+import Trending from "../components/trending";
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
       </Head>
       <main>
         <Navigation />
-        <Hero />
+        {/* <Hero /> */}
+        <Trending />
       </main>
     </>
   );
