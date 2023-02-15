@@ -9,9 +9,9 @@ import heroImage from "../public/images/Image Placeholder.png";
 
 export default function Hero() {
   return (
-    <Container className="hero">
-      <Row>
-        <Col sm={7}>
+    <div className="hero">
+      <div>
+        <div sm={7}>
           <h1 className="hero-title">Discover Digital Art & Collect NFTs</h1>
           <h3 className="hero-desc">
             A NFT Marketplace to discovery, buy, and sell. This is an example
@@ -39,20 +39,20 @@ export default function Hero() {
               </li>
             </ul>
           </div>
-        </Col>
-        <Col sm={5}>
-          <Card className="hero-img">
+        </div>
+        <div sm={5}>
+          <div className="hero-img">
             <Image
               src={heroImage}
               style={{ position: "relative", width: "100%", height: "100%" }}
             />
-            <Card.Body>
-              <Card.Title>Space Walking</Card.Title>
-              <Card.Text>Artist Here</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+            <div>
+              <h3>Space Walking</h3>
+              <h4>Artist Here</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -21,8 +21,8 @@ export default function Home() {
       </Head>
       <main>
         <Navigation />
-        {/* <Hero /> */}
-        <Trending />
+        <Hero />
+        {/* <Trending /> */}
       </main>
     </>
   );
