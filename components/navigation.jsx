@@ -13,7 +13,7 @@ export default function Navigation() {
       <Container className="nav-container">
         <Nav className="nav-left">
           <Navbar.Brand href="#home">
-            <Image src={logo} />
+            <Image src={logo} alt="log" />
             NFT Marketplace
           </Navbar.Brand>
         </Nav>
