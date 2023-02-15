@@ -9,27 +9,28 @@ import styles from "./trending.module.css";
 export default function TrendingCard({}) {
   return (
     <div className="trending-card">
-      <Row>
-        <Col sm={12}>
-          <Image src={trendPlaceholder} alt="absdf" width={330} />
+      <Row noGutters={true} width={350}>
+        <Col noGutters={true}>
+          <Image src={trendPlaceholder} alt="absdf" width={350} />
         </Col>
       </Row>
-      <Row>
-        <Col className={styles.smallImgCont} sm={4}>
+      <Row noGutters={true}>
+        {/* <Col className={styles.smallImgCont} sm={4}> */}
+        <Col className={styles.smallImgCont}>
           <Image
             className={styles.smallImage}
             src={trendPlaceholder}
             alt="absdf"
           />
         </Col>
-        <Col className={styles.smallImgCont} sm={4}>
+        <Col className={styles.smallImgCont}>
           <Image
             className={styles.smallImage}
             src={trendPlaceholder}
             alt="absdf"
           />
         </Col>
-        <Col className={styles.smallImgCont} sm={4}>
+        <Col className={styles.smallImgCont}>
           <Image
             className={styles.smallImage}
             src={trendPlaceholder}

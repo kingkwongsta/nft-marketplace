@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TrendingCard from "./trendingcard";
 import styles from "./trending.module.css";
+import { Container } from "react-bootstrap";
 
 export default function Trending() {
   function renderTrendingCards() {
@@ -21,7 +22,13 @@ export default function Trending() {
       <h3 className={styles.desc}>
         Checkout Our Weekly Updated Trending Collection.
       </h3>
-      <div className="trending-collection">
+      {/* <div className="trending-collection">
+        <Row>{renderTrendingCards()}</Row>
+      </div> */}
+      <div
+        className="trending-collection"
+        style={{ margin: 0, padding: 0, width: 1050 }}
+      >
         <Row>{renderTrendingCards()}</Row>
       </div>
     </div>

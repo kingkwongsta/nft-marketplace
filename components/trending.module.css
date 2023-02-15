@@ -13,6 +13,10 @@
   font-size: 22px;
   line-height: 160%;
 }
+.trending-collection {
+  display: flex;
+  justify-content: space-evenly;
+}
 .smallImgCont {
   margin: 0px;
   padding: 0px;
