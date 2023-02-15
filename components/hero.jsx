@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="hero-img">
           <Image
             src={heroImage}
-            style={{ position: "relative", width: "100%", height: "100%" }}
+            // style={{ position: "relative", width: "100%", height: "100%" }}
           />
           <div>
             <h3>Space Walking</h3>
