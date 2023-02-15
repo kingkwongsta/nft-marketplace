@@ -13,3 +13,12 @@
   font-size: 22px;
   line-height: 160%;
 }
+.smallImgCont {
+  margin: 0px;
+  padding: 0px;
+}
+
+.smallImage {
+  width: 100px;
+  height: 100px;
+}

@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import trendPlaceholder from "../public/images/Trending-Placeholder.png";
+import styles from "./trending.module.css";
 
 export default function TrendingCard({}) {
   return (
@@ -14,14 +15,26 @@ export default function TrendingCard({}) {
         </Col>
       </Row>
       <Row>
-        <Col sm={4}>
-          <Image src={trendPlaceholder} alt="absdf" width={100} />
+        <Col className={styles.smallImgCont} sm={4}>
+          <Image
+            className={styles.smallImage}
+            src={trendPlaceholder}
+            alt="absdf"
+          />
         </Col>
-        <Col sm={4}>
-          <Image src={trendPlaceholder} alt="absdf" width={100} />
+        <Col className={styles.smallImgCont} sm={4}>
+          <Image
+            className={styles.smallImage}
+            src={trendPlaceholder}
+            alt="absdf"
+          />
         </Col>
-        <Col sm={4}>
-          <Image src={trendPlaceholder} alt="absdf" width={100} />
+        <Col className={styles.smallImgCont} sm={4}>
+          <Image
+            className={styles.smallImage}
+            src={trendPlaceholder}
+            alt="absdf"
+          />
         </Col>
       </Row>
       <h3 className="trending-collection-name">DSGN Animals</h3>
