@@ -1,43 +1,42 @@
 import React from "react";
 import Image from "next/image";
-import Button from "react-bootstrap/Button";
 import heroImage from "../public/images/Image Placeholder.png";
 
 export default function Hero() {
   return (
-    <div className="hero">
-      <div className="hero-left">
-        <h1 className="text-5xl font-medium tracking-wide">
+    <div className="hero flex m-20">
+      <div className="hero-left flex-auto w-64">
+        <h1 className="text-5xl font-medium tracking-wide mb-5">
           Discover Digital Art & Collect NFTs
         </h1>
-        <h3 className="text-xl">
+        <h3 className="text-2xl mb-10">
           A NFT Marketplace to discovery, buy, and sell. This is an example for
           my Portfolio.
         </h3>
-        <Button className="button-secondary" variant="primary">
+        <button className="text-xl mb-10" type="button">
           Get Started
-        </Button>{" "}
+        </button>{" "}
         <div className="hero-stats">
-          <ul className="hero-stats-list">
-            <li>
-              <span className="hero-stats-num">900+</span>
+          <ul className="flex justify-between">
+            <li className="pr-5">
+              <span className="text-2xl font-medium">900+</span>
               <br />
-              <span className="hero-stats-name">Sold</span>
+              <span className="text-2xl">Sold</span>
             </li>
-            <li>
-              <span className="hero-stats-num">2800+</span>
+            <li className="pr-5">
+              <span className="text-2xl font-medium">2800+</span>
               <br />
-              <span className="hero-stats-name">Auctions</span>
+              <span className="text-2xl">Auctions</span>
             </li>
-            <li>
-              <span className="hero-stats-num">350+</span>
+            <li className="pr-5">
+              <span className="text-2xl font-medium">350+</span>
               <br />
-              <span className="hero-stats-name">Artist</span>
+              <span className="text-2xl">Artist</span>
             </li>
           </ul>
         </div>
       </div>
-      <div className="hero-right">
+      <div className="hero-right flex-auto w-32">
         <div className="hero-img">
           <Image
             src={heroImage}
