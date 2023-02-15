@@ -10,13 +10,19 @@ export default function TrendingCard({}) {
     <div className="trending-card">
       <Row>
         <Col sm={12}>
-          <Image src={trendPlaceholder} alt="absdf" />
+          <Image src={trendPlaceholder} alt="absdf" width={330} />
         </Col>
       </Row>
       <Row>
-        <Col sm={4}>img</Col>
-        <Col sm={4}>img</Col>
-        <Col sm={4}>img</Col>
+        <Col sm={4}>
+          <Image src={trendPlaceholder} alt="absdf" width={100} />
+        </Col>
+        <Col sm={4}>
+          <Image src={trendPlaceholder} alt="absdf" width={100} />
+        </Col>
+        <Col sm={4}>
+          <Image src={trendPlaceholder} alt="absdf" width={100} />
+        </Col>
       </Row>
       <h3 className="trending-collection-name">DSGN Animals</h3>
       <div className="trending-collection-info">

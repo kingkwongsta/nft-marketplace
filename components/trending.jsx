@@ -1,9 +1,8 @@
 import React from "react";
-import Image from "next/image";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TrendingCard from "./trendingcard";
+import styles from "./trending.module.css";
 
 export default function Trending() {
   function renderTrendingCards() {
@@ -18,8 +17,8 @@ export default function Trending() {
   }
   return (
     <div className="trending">
-      <h2 className="trending-title">Trending Collection</h2>
-      <h3 className="trending-desc">
+      <h2 className={styles.title}>Trending Collection</h2>
+      <h3 className={styles.desc}>
         Checkout Our Weekly Updated Trending Collection.
       </h3>
       <div className="trending-collection">
