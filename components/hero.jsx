@@ -7,8 +7,10 @@ export default function Hero() {
   return (
     <div className="hero">
       <div className="hero-left">
-        <h1 className="hero-title">Discover Digital Art & Collect NFTs</h1>
-        <h3 className="hero-desc">
+        <h1 className="text-5xl font-medium tracking-wide">
+          Discover Digital Art & Collect NFTs
+        </h1>
+        <h3 className="text-xl">
           A NFT Marketplace to discovery, buy, and sell. This is an example for
           my Portfolio.
         </h3>

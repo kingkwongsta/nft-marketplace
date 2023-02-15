@@ -20,7 +20,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        <Navigation />
+        {/* <Navigation /> */}
         <Hero />
         {/* <Trending /> */}
       </main>

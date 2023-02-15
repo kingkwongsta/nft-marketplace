@@ -6,6 +6,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Work Sans", "sans-serif"],
+      serif: ["Space Mono", "serif"],
+    },
     extend: {},
   },
   plugins: [],
