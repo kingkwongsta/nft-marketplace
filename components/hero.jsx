@@ -6,12 +6,12 @@ import artistIcon from "../public/images/Artist Icon Placeholder.png";
 
 export default function Hero() {
   return (
-    <div className="hero flex m-32">
+    <div className="hero flex mt-36 mx-36 mb-20">
       <div className="hero-left flex-auto basis-1/2 mr-12">
         <h1 className="text-6xl font-semibold tracking-wider leading-none mb-10">
           Discover Digital Art & Collect NFTs
         </h1>
-        <h3 className="text-2xl mb-12 leading-normal">
+        <h3 className="text-2xl mb-12 font-normal leading-normal">
           A NFT Marketplace to discovery, buy, and sell. This is an example for
           my Portfolio.
         </h3>

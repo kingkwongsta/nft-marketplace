@@ -22,7 +22,7 @@ export default function Home() {
       <main>
         {/* <Navigation /> */}
         <Hero />
-        {/* <Trending /> */}
+        <Trending />
       </main>
     </>
   );

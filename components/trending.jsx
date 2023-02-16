@@ -9,28 +9,18 @@ export default function Trending() {
   function renderTrendingCards() {
     const trendingCardElements = [1, 2, 3];
     return trendingCardElements.map(() => {
-      return (
-        <Col sm={4}>
-          <TrendingCard />
-        </Col>
-      );
+      return <TrendingCard />;
     });
   }
   return (
-    <div className="trending">
-      <h2 className={styles.title}>Trending Collection</h2>
-      <h3 className={styles.desc}>
+    <div className="trending mt-32 mx-36 mb-16">
+      <h2 className="text-4xl font-semibold tracking-wide mb-4">
+        Trending Collection
+      </h2>
+      <h3 className="text-2xl font-normal tracking-wide mb-14">
         Checkout Our Weekly Updated Trending Collection.
       </h3>
-      {/* <div className="trending-collection">
-        <Row>{renderTrendingCards()}</Row>
-      </div> */}
-      <div
-        className="trending-collection"
-        style={{ margin: 0, padding: 0, width: 1050 }}
-      >
-        <Row>{renderTrendingCards()}</Row>
-      </div>
+      <div className="trending-collection flex">{renderTrendingCards()}</div>
     </div>
   );
 }
