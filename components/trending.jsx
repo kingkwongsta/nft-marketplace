@@ -1,9 +1,5 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import TrendingCard from "./trendingcard";
-import styles from "./trending.module.css";
-import { Container } from "react-bootstrap";
 
 export default function Trending() {
   function renderTrendingCards() {
@@ -20,7 +16,9 @@ export default function Trending() {
       <h3 className="text-2xl font-normal tracking-wide mb-14">
         Checkout Our Weekly Updated Trending Collection.
       </h3>
-      <div className="trending-collection flex">{renderTrendingCards()}</div>
+      <div className="trending-collection flex justify-between">
+        {renderTrendingCards()}
+      </div>
     </div>
   );
 }
