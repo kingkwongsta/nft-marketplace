@@ -1,47 +1,23 @@
 import React from "react";
 import Image from "next/image";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import trendPlaceholder from "../public/images/Trending-Placeholder.png";
-import styles from "./trending.module.css";
+import additionalNFT from "../public/images/additionalNFT.png";
 
 export default function TrendingCard({}) {
   return (
     <div className="trending-card">
-      <Row noGutters={true} width={350}>
-        <Col noGutters={true}>
-          <Image src={trendPlaceholder} alt="absdf" width={350} />
-        </Col>
-      </Row>
-      <Row noGutters={true}>
-        {/* <Col className={styles.smallImgCont} sm={4}> */}
-        <Col className={styles.smallImgCont}>
-          <Image
-            className={styles.smallImage}
-            src={trendPlaceholder}
-            alt="absdf"
-          />
-        </Col>
-        <Col className={styles.smallImgCont}>
-          <Image
-            className={styles.smallImage}
-            src={trendPlaceholder}
-            alt="absdf"
-          />
-        </Col>
-        <Col className={styles.smallImgCont}>
-          <Image
-            className={styles.smallImage}
-            src={trendPlaceholder}
-            alt="absdf"
-          />
-        </Col>
-      </Row>
-      <h3 className="trending-collection-name">DSGN Animals</h3>
-      <div className="trending-collection-info">
-        <Image src={trendPlaceholder} alt="weree" width={50} />
-        <span className="trending-collection-creator">MrFox</span>
+      <Image className="mb-6" src={trendPlaceholder} alt="absdf" width={350} />
+      <div className="flex justify-between">
+        <Image src={trendPlaceholder} alt="absdf" width={100} height={100} />
+        <Image src={trendPlaceholder} alt="absdf" width={100} height={100} />
+        <Image src={additionalNFT} alt="absdf" width={100} height={100} />
+      </div>
+      <div className="mt-7">
+        <h3 className="text-2xl font-semibold mb-3">DSGN Animals</h3>
+        <div className="flex">
+          <Image src={trendPlaceholder} alt="weree" width={30} />
+          <span className="ml-3 text-lg">MrFox</span>
+        </div>
       </div>
     </div>
   );
