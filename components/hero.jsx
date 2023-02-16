@@ -1,58 +1,59 @@
 import React from "react";
 import Image from "next/image";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import heroImage from "../public/images/Image Placeholder.png";
+import rocket from "../public/images/rocket.png";
+import artistIcon from "../public/images/Artist Icon Placeholder.png";
 
 export default function Hero() {
   return (
-    <Container className="hero">
-      <Row>
-        <Col sm={7}>
-          <h1 className="hero-title">Discover Digital Art & Collect NFTs</h1>
-          <h3 className="hero-desc">
-            A NFT Marketplace to discovery, buy, and sell. This is an example
-            for my Portfolio.
-          </h3>
-          <Button className="button-secondary" variant="primary">
-            Get Started
-          </Button>{" "}
-          <div className="hero-stats">
-            <ul className="hero-stats-list">
-              <li>
-                <span className="hero-stats-num">900+</span>
-                <br />
-                <span className="hero-stats-name">Sold</span>
-              </li>
-              <li>
-                <span className="hero-stats-num">2800+</span>
-                <br />
-                <span className="hero-stats-name">Auctions</span>
-              </li>
-              <li>
-                <span className="hero-stats-num">350+</span>
-                <br />
-                <span className="hero-stats-name">Artist</span>
-              </li>
-            </ul>
+    <div className="hero flex m-32">
+      <div className="hero-left flex-auto basis-1/2 mr-12">
+        <h1 className="text-6xl font-semibold tracking-wider leading-none mb-10">
+          Discover Digital Art & Collect NFTs
+        </h1>
+        <h3 className="text-2xl mb-12 leading-normal">
+          A NFT Marketplace to discovery, buy, and sell. This is an example for
+          my Portfolio.
+        </h3>
+        <button
+          className=" flex text-xl mb-12 bg-violet-600 w-56 py-[13px] rounded-2xl"
+          type="button"
+        >
+          <Image src={rocket} className="w-6 ml-7 mr-3 mt-.5" /> Get Started
+        </button>
+        <div className="hero-stats">
+          <ul className="flex justify-between">
+            <li className="pr-5">
+              <p className="text-2xl font-medium font-mono mb-2">900+</p>
+              <p className="text-2xl">Sold</p>
+            </li>
+            <li className="pr-5">
+              <p className="text-2xl font-medium font-mono mb-2">2800+</p>
+              <p className="text-2xl">Auctions</p>
+            </li>
+            <li className="pr-5">
+              <p className="text-2xl font-medium font-mono mb-2">350+</p>
+              <p className="text-2xl">Artist</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="hero-right flex-auto basis-1/2 ">
+        <div className="hero-img">
+          <Image
+            src={heroImage}
+            className="w-full"
+            // style={{ position: "relative", width: "100%", height: "100%" }}
+          />
+          <div className="bg-zinc-700 rounded-b-lg h-28">
+            <h3 className="ml-6 pt-5 text-2xl font-semibold">Space Walking</h3>
+            <h4 className="flex ml-6 pt-2 text-lg">
+              <Image src={artistIcon} className="w-6 h-6 mt-[3px] mr-3" />{" "}
+              Artist Here
+            </h4>
           </div>
-        </Col>
-        <Col sm={5}>
-          <Card className="hero-img">
-            <Image
-              src={heroImage}
-              style={{ position: "relative", width: "100%", height: "100%" }}
-            />
-            <Card.Body>
-              <Card.Title>Space Walking</Card.Title>
-              <Card.Text>Artist Here</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 }
