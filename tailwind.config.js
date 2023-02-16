@@ -9,6 +9,7 @@ module.exports = {
     fontFamily: {
       sans: ["Work Sans", "sans-serif"],
       serif: ["Space Mono", "serif"],
+      mono: ["Space Mono", "serif"],
     },
     extend: {},
   },

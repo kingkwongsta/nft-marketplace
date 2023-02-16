@@ -4,9 +4,9 @@ import heroImage from "../public/images/Image Placeholder.png";
 
 export default function Hero() {
   return (
-    <div className="hero flex m-20">
-      <div className="hero-left flex-auto w-64">
-        <h1 className="text-5xl font-medium tracking-wide mb-5">
+    <div className="hero flex m-32">
+      <div className="hero-left flex-auto basis-1/2 mr-12">
+        <h1 className="text-5xl font-semibold tracking-wide mb-5">
           Discover Digital Art & Collect NFTs
         </h1>
         <h3 className="text-2xl mb-10">
@@ -19,32 +19,33 @@ export default function Hero() {
         <div className="hero-stats">
           <ul className="flex justify-between">
             <li className="pr-5">
-              <span className="text-2xl font-medium">900+</span>
+              <span className="text-2xl font-medium font-mono">900+</span>
               <br />
               <span className="text-2xl">Sold</span>
             </li>
             <li className="pr-5">
-              <span className="text-2xl font-medium">2800+</span>
+              <span className="text-2xl font-medium font-mono">2800+</span>
               <br />
               <span className="text-2xl">Auctions</span>
             </li>
             <li className="pr-5">
-              <span className="text-2xl font-medium">350+</span>
+              <span className="text-2xl font-medium font-mono">350+</span>
               <br />
               <span className="text-2xl">Artist</span>
             </li>
           </ul>
         </div>
       </div>
-      <div className="hero-right flex-auto w-32">
+      <div className="hero-right flex-auto basis-1/2 ">
         <div className="hero-img">
           <Image
             src={heroImage}
+            className="w-full"
             // style={{ position: "relative", width: "100%", height: "100%" }}
           />
-          <div>
-            <h3>Space Walking</h3>
-            <h4>Artist Here</h4>
+          <div className="bg-zinc-700 rounded-b-lg h-28">
+            <h3 className="ml-5 pt-5 text-xl font-semibold">Space Walking</h3>
+            <h4 className="ml-5 pt-2">Artist Here</h4>
           </div>
         </div>
       </div>
