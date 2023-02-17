@@ -1,16 +1,27 @@
 import React from "react";
 import TrendingCard from "./trendingcard";
+import { useQuery } from "@tanstack/react-query";
+import { fetchData } from "../pages/api/nft.js";
 
 export default function Trending() {
+  const { status, error, data, isFetching } = useQuery(["data"], fetchData);
+
   function renderTrendingCards() {
     const trendingCardElements = [1, 2, 3];
-    return trendingCardElements.map(() => {
-      return <TrendingCard />;
+    return trendingCardElements.map((x, key) => {
+      return <TrendingCard key={key} />;
     });
   }
+  function handleClick() {
+    console.log(data);
+  }
+
   return (
     <div className="trending mt-32 mx-36 mb-16">
-      <h2 className="text-4xl font-semibold tracking-wide mb-4">
+      <h2
+        onClick={handleClick}
+        className="text-4xl font-semibold tracking-wide mb-4"
+      >
         Trending Collection
       </h2>
       <h3 className="text-2xl font-normal tracking-wide mb-14">
