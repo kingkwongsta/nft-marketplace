@@ -3,10 +3,23 @@ import Image from "next/image";
 import Navigation from "../components/navigation";
 import Hero from "../components/hero";
 import Trending from "../components/trending";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnmount: false,
+      refetchOnReconnect: false,
+      retry: false,
+      staleTime: 10000,
+    },
+  },
+});
 
 export default function Home() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Head>
         <title>Create Next App</title>
         <meta name="description" content="The Best NFT Website" />
@@ -24,6 +37,6 @@ export default function Home() {
         <Hero />
         <Trending />
       </main>
-    </>
+    </QueryClientProvider>
   );
 }
