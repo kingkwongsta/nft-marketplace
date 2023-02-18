@@ -1,5 +1,5 @@
-// Setup: npm install alchemy-sdk
 import { Alchemy, Network } from "alchemy-sdk";
+import useSWR from "swr";
 
 const config = {
   apiKey: "gpp3BgjyZPndnfRM4Hnvt5ESKBAc3mAb",
@@ -19,6 +19,7 @@ const main = async () => {
     omitMetadata: omitMetadata,
   });
 
+  //store image urls in array
   let i = 0;
   let nftStore = [];
 
