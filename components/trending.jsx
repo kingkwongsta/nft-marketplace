@@ -1,11 +1,11 @@
 import React from "react";
 import TrendingCard from "./trendingcard";
-import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../pages/api/nft.js";
+import fetchData from "../pages/api/nft.js";
 
 export default function Trending() {
-  const { status, error, data, isFetching } = useQuery(["data"], fetchData);
-
+  const [data, setData] = React.useState();
+  const [enable, setEnable] = React.useState(0);
+  fetchData();
   function renderTrendingCards() {
     const trendingCardElements = [1, 2, 3];
     return trendingCardElements.map((x, key) => {
@@ -13,6 +13,7 @@ export default function Trending() {
     });
   }
   function handleClick() {
+    setData(fetchData);
     console.log(data);
   }
 
