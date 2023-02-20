@@ -1,19 +1,34 @@
 import React from "react";
 import TrendingCard from "./trendingcard";
-import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../pages/api/nft.js";
+import fetchData from "../pages/api/nft.js";
+// import test from "../pages/api/test.js";
 
 export default function Trending() {
-  const { status, error, data, isFetching } = useQuery(["data"], fetchData);
+  const [data, setData] = React.useState();
+
+  React.useEffect(() => {
+    fetcher();
+  }, []);
+
+  const fetcher = async () => {
+    try {
+      const res = await fetchData();
+      const temp = res.slice(0, 3);
+      setData(temp);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   function renderTrendingCards() {
     const trendingCardElements = [1, 2, 3];
     return trendingCardElements.map((x, key) => {
-      return <TrendingCard key={key} />;
+      return <TrendingCard key={key} img={data} />;
     });
   }
+  //Testing fetchdad
   function handleClick() {
-    console.log(data);
+    console.log(data[1]);
   }
 
   return (
@@ -28,7 +43,7 @@ export default function Trending() {
         Checkout Our Weekly Updated Trending Collection.
       </h3>
       <div className="trending-collection flex justify-between">
-        {renderTrendingCards()}
+        {data == null ? <div>loading</div> : renderTrendingCards()}
       </div>
     </div>
   );
