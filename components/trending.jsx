@@ -1,23 +1,24 @@
 import React from "react";
 import TrendingCard from "./trendingcard";
 // import fetchData from "../pages/api/nft.js";
-// import test from "../pages/api/test.js";
+import test from "../pages/api/test.js";
 
 export default function Trending() {
   const [data, setData] = React.useState();
   const [enable, setEnable] = React.useState(0);
 
   React.useEffect(() => {
-    const dataFetch = async () => {
-      const data = await (
-        await fetch("https://api.artic.edu/api/v1/artworks/129884")
-      ).json();
-
-      // set state when the data received
-      setData(data);
-    };
-    dataFetch();
+    fetcher();
   }, []);
+
+  const fetcher = async () => {
+    try {
+      const res = await test();
+      setData(res.data.id);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   function renderTrendingCards() {
     const trendingCardElements = [1, 2, 3];
@@ -27,7 +28,7 @@ export default function Trending() {
   }
   //Testing fetchdad
   function handleClick() {
-    console.log(data.data);
+    console.log(data);
   }
 
   return (
