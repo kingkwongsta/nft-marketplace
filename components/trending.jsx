@@ -5,7 +5,6 @@ import fetchData from "../pages/api/nft.js";
 
 export default function Trending() {
   const [data, setData] = React.useState();
-  const [enable, setEnable] = React.useState(0);
 
   React.useEffect(() => {
     fetcher();
@@ -14,7 +13,8 @@ export default function Trending() {
   const fetcher = async () => {
     try {
       const res = await fetchData();
-      setData(res);
+      const temp = res.slice(0, 3);
+      setData(temp);
     } catch (err) {
       console.log(err);
     }
@@ -23,7 +23,7 @@ export default function Trending() {
   function renderTrendingCards() {
     const trendingCardElements = [1, 2, 3];
     return trendingCardElements.map((x, key) => {
-      return <TrendingCard key={key} />;
+      return <TrendingCard key={key} img={data} />;
     });
   }
   //Testing fetchdad
@@ -43,7 +43,7 @@ export default function Trending() {
         Checkout Our Weekly Updated Trending Collection.
       </h3>
       <div className="trending-collection flex justify-between">
-        {renderTrendingCards()}
+        {data == null ? <div>loading</div> : renderTrendingCards()}
       </div>
     </div>
   );
