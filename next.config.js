@@ -5,12 +5,12 @@
 
 // module.exports = nextConfig;
 
-export default module.exports = {
+module.exports = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.hswstatic.com",
+        hostname: "ipfs.io",
         // port: "",
         // pathname: "/account123/**",
       },

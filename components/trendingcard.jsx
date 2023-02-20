@@ -8,14 +8,14 @@ export default function TrendingCard({ img }) {
     <div className="trending-card">
       <Image
         className="mb-6"
-        src="https://cdn.hswstatic.com/gif/why-is-sky-blue.jpg"
+        src={img[0]}
         alt="absdf"
         width={350}
-        height={250}
+        height={300}
       />
       <div className="flex justify-between">
-        <Image src={trendPlaceholder} alt="absdf" width={100} height={100} />
-        <Image src={trendPlaceholder} alt="absdf" width={100} height={100} />
+        <Image src={img[1]} alt="absdf" width={100} height={100} />
+        <Image src={img[2]} alt="absdf" width={100} height={100} />
         <Image src={additionalNFT} alt="absdf" width={100} height={100} />
       </div>
       <div className="mt-7">
