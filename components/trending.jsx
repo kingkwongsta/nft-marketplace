@@ -1,7 +1,7 @@
 import React from "react";
 import TrendingCard from "./trendingcard";
-// import fetchData from "../pages/api/nft.js";
-import test from "../pages/api/test.js";
+import fetchData from "../pages/api/nft.js";
+// import test from "../pages/api/test.js";
 
 export default function Trending() {
   const [data, setData] = React.useState();
@@ -13,8 +13,8 @@ export default function Trending() {
 
   const fetcher = async () => {
     try {
-      const res = await test();
-      setData(res.data.id);
+      const res = await fetchData();
+      setData(res);
     } catch (err) {
       console.log(err);
     }
@@ -28,7 +28,7 @@ export default function Trending() {
   }
   //Testing fetchdad
   function handleClick() {
-    console.log(data);
+    console.log(data[1]);
   }
 
   return (
