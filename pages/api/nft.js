@@ -8,14 +8,15 @@ const config = {
 const alchemy = new Alchemy(config);
 
 const main = async () => {
-  //   Contract address
-  const address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
+  //   BAYC address
+  const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
+  const PunkAddress = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
   // Flag to omit metadata
   const omitMetadata = false;
 
   // Get all NFTs
-  const { nfts } = await alchemy.nft.getNftsForContract(address, {
+  const { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
     omitMetadata: omitMetadata,
   });
 
