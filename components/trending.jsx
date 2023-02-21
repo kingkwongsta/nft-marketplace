@@ -22,7 +22,14 @@ export default function Trending() {
   function renderTrendingCards() {
     const trendingCardElements = [0, 1, 2];
     return trendingCardElements.map((x, key) => {
-      return <TrendingCard key={key} img={data[x].img} all={data[x].all} />;
+      return (
+        <TrendingCard
+          key={key}
+          img={data[x].img}
+          collection={data[x].collection}
+          desc={data[x].desc}
+        />
+      );
     });
   }
   //Testing fetchdad

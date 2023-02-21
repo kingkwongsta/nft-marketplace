@@ -25,17 +25,18 @@ async function test() {
 
     //store image urls in array
     let k = 0;
-    let nftStore = [];
+    let images = [];
 
     for (let nft of nfts) {
       let temp = nft.rawMetadata.image.slice(7);
-      nftStore[k] = `https://ipfs.io/ipfs/${temp}`;
+      images[k] = `https://ipfs.io/ipfs/${temp}`;
       k++;
     }
     NFTData.push({
       address: NFTAddress[i],
-      img: nftStore,
-      all: nfts,
+      img: images,
+      collection: nfts[0].contract.openSea.collectionName,
+      desc: nfts[0].contract.openSea.description,
     });
   }
   return NFTData;
