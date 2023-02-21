@@ -11,25 +11,30 @@ const main = async () => {
   //   BAYC address
   const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
   const PunkAddress = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
+  const AzukiAddress = "0xED5AF388653567Af2F388E6224dC7C4b3241C544";
+  const NFTAddress = [BAYCAddress, PunkAddress, AzukiAddress];
 
   // Flag to omit metadata
   const omitMetadata = false;
 
-  // Get all NFTs
-  const { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
-    omitMetadata: omitMetadata,
+  const NFTData = NFTAddress.map(async (x) => {
+    // Get all NFTs
+    const { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
+      omitMetadata: omitMetadata,
+    });
+
+    //store image urls in array
+    let i = 0;
+    let nftStore = [];
+
+    for (let nft of nfts) {
+      let temp = nft.rawMetadata.image.slice(7);
+      nftStore[i] = `https://ipfs.io/ipfs/${temp}`;
+      i++;
+    }
+    return { address: x, img: nftStore };
   });
-
-  //store image urls in array
-  let i = 0;
-  let nftStore = [];
-
-  for (let nft of nfts) {
-    let temp = nft.rawMetadata.image.slice(7);
-    nftStore[i] = `https://ipfs.io/ipfs/${temp}`;
-    i++;
-  }
-  return nftStore;
+  return NFTData;
 };
 
 async function test() {
