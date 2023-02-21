@@ -13,8 +13,7 @@ export default function Trending() {
   const fetcher = async () => {
     try {
       const res = await fetchData();
-      const temp = res.slice(0, 3);
-      setData(temp);
+      setData(res);
     } catch (err) {
       console.log(err);
     }
@@ -28,7 +27,7 @@ export default function Trending() {
   }
   //Testing fetchdad
   function handleClick() {
-    console.log(data[1]);
+    console.log(data);
   }
 
   return (
@@ -43,7 +42,7 @@ export default function Trending() {
         Checkout Our Weekly Updated Trending Collection.
       </h3>
       <div className="trending-collection flex justify-between">
-        {data == null ? <div>loading</div> : renderTrendingCards()}
+        {/* {data == null ? <div>loading</div> : renderTrendingCards()} */}
       </div>
     </div>
   );
