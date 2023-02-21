@@ -32,7 +32,11 @@ async function test() {
       nftStore[k] = `https://ipfs.io/ipfs/${temp}`;
       k++;
     }
-    NFTData.push({ address: NFTAddress[i], img: nftStore });
+    NFTData.push({
+      address: NFTAddress[i],
+      img: nftStore,
+      all: nfts,
+    });
   }
   return NFTData;
 }
