@@ -13,22 +13,28 @@ export default function Trending() {
   const fetcher = async () => {
     try {
       const res = await fetchData();
-      const temp = res.slice(0, 3);
-      setData(temp);
+      setData(res);
     } catch (err) {
       console.log(err);
     }
   };
 
   function renderTrendingCards() {
-    const trendingCardElements = [1, 2, 3];
+    const trendingCardElements = [0, 1, 2];
     return trendingCardElements.map((x, key) => {
-      return <TrendingCard key={key} img={data} />;
+      return (
+        <TrendingCard
+          key={key}
+          img={data[x].img}
+          collection={data[x].collection}
+          desc={data[x].desc}
+        />
+      );
     });
   }
   //Testing fetchdad
   function handleClick() {
-    console.log(data[1]);
+    console.log(data);
   }
 
   return (

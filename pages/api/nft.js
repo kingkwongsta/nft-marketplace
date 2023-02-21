@@ -7,63 +7,39 @@ const config = {
 };
 const alchemy = new Alchemy(config);
 
-const main = async () => {
+async function test() {
   //   BAYC address
   const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
-  const PunkAddress = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
+  const AzukiAddress = "0xED5AF388653567Af2F388E6224dC7C4b3241C544";
+  const Doodles = "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e";
+  const NFTAddress = [BAYCAddress, AzukiAddress, Doodles];
+  const NFTData = [];
 
   // Flag to omit metadata
   const omitMetadata = false;
 
-  // Get all NFTs
-  const { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
-    omitMetadata: omitMetadata,
-  });
+  for (let i = 0; i < NFTAddress.length; i++) {
+    let { nfts } = await alchemy.nft.getNftsForContract(NFTAddress[i], {
+      omitMetadata: omitMetadata,
+    });
 
-  //store image urls in array
-  let i = 0;
-  let nftStore = [];
+    //store image urls in array
+    let k = 0;
+    let images = [];
 
-  for (let nft of nfts) {
-    let temp = nft.rawMetadata.image.slice(7);
-    nftStore[i] = `https://ipfs.io/ipfs/${temp}`;
-    i++;
+    for (let nft of nfts) {
+      let temp = nft.rawMetadata.image.slice(7);
+      images[k] = `https://ipfs.io/ipfs/${temp}`;
+      k++;
+    }
+    NFTData.push({
+      address: NFTAddress[i],
+      img: images,
+      collection: nfts[0].contract.openSea.collectionName,
+      desc: nfts[0].contract.openSea.description,
+    });
   }
-  return nftStore;
-};
-
-async function test() {
-  //   Contract address
-  const address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
-
-  // Flag to omit metadata
-  const omitMetadata = false;
-
-  // Get all NFTs
-  const { nfts } = await alchemy.nft.getNftsForContract(address, {
-    omitMetadata: omitMetadata,
-  });
-
-  //store image urls in array
-  let i = 0;
-  let nftStore = [];
-
-  for (let nft of nfts) {
-    let temp = nft.rawMetadata.image.slice(7);
-    nftStore[i] = `https://ipfs.io/ipfs/${temp}`;
-    i++;
-  }
-  return nftStore;
+  return NFTData;
 }
-
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
 
 export default test;
