@@ -20,9 +20,9 @@ export default function Trending() {
   };
 
   function renderTrendingCards() {
-    const trendingCardElements = [1, 2, 3];
+    const trendingCardElements = [0, 1, 2];
     return trendingCardElements.map((x, key) => {
-      return <TrendingCard key={key} img={data} />;
+      return <TrendingCard key={key} img={data[x].img} />;
     });
   }
   //Testing fetchdad
@@ -42,7 +42,7 @@ export default function Trending() {
         Checkout Our Weekly Updated Trending Collection.
       </h3>
       <div className="trending-collection flex justify-between">
-        {/* {data == null ? <div>loading</div> : renderTrendingCards()} */}
+        {data == null ? <div>loading</div> : renderTrendingCards()}
       </div>
     </div>
   );
