@@ -19,6 +19,7 @@ async function test() {
   const omitMetadata = false;
 
   for (let i = 0; i < NFTAddress.length; i++) {
+    console.log("fetching data");
     let { nfts } = await alchemy.nft.getNftsForContract(NFTAddress[i], {
       omitMetadata: omitMetadata,
     });
