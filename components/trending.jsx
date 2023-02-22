@@ -1,23 +1,25 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import TrendingCard from "./trendingcard";
-import fetchData from "../pages/api/nft.js";
-// import test from "../pages/api/test.js";
+//*** */ REMOVE COMMENT FOR API CALL
+// import fetchData from "../pages/api/nft.js";
+import nftData from "../pages/api/cleanNFTData.js";
 
 export default function Trending() {
-  const [data, setData] = React.useState();
+  const [data, setData] = useState(nftData);
 
-  React.useEffect(() => {
-    fetcher();
-  }, []);
+  //*** */ REMOVE COMMENTS FOR API CALL
+  // useEffect(() => {
+  //   fetcher();
+  // }, []);
 
-  const fetcher = async () => {
-    try {
-      const res = await fetchData();
-      setData(res);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const fetcher = async () => {
+  //   try {
+  //     const res = await fetchData();
+  //     setData(res);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   function renderTrendingCards() {
     const trendingCardElements = [0, 1, 2];
