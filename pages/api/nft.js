@@ -42,4 +42,14 @@ async function test() {
   return NFTData;
 }
 
+//GET ALL DATA, NO TRANSFORM
+async function test2() {
+  const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
+  const omitMetadata = false;
+  let { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
+    omitMetadata: omitMetadata,
+  });
+  return nfts;
+}
+
 export default test;

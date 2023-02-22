@@ -49,7 +49,7 @@ export default function Trending() {
         Checkout Our Weekly Updated Trending Collection.
       </h3>
       <div className="trending-collection flex justify-between">
-        {data == null ? <div>loading</div> : renderTrendingCards()}
+        {/* {data == null ? <div>loading</div> : renderTrendingCards()} */}
       </div>
     </div>
   );
