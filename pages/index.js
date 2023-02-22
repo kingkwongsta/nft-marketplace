@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navigation from "../components/navigation";
 import Hero from "../components/hero";
 import Trending from "../components/trending";
+import Popular from "../components/popular";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient({
@@ -21,7 +22,7 @@ export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <Head>
-        <title>Create Next App</title>
+        <title>NFT Browse</title>
         <meta name="description" content="The Best NFT Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -35,7 +36,8 @@ export default function Home() {
       <main>
         {/* <Navigation /> */}
         <Hero />
-        <Trending />
+        <Popular />
+        {/* <Trending /> */}
       </main>
     </QueryClientProvider>
   );
