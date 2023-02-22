@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import test from "../public/images/Image Placeholder.png";
 import PopularCard from "./popularcard";
+import data from "../pages/api/cleanNFTData";
 
 export default function Popular() {
   function renderPopular() {
-    const popularElements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const popularElements = [0, 1, 2];
     return popularElements.map((x, key) => {
-      return <PopularCard key={key} />;
+      return <PopularCard key={key} data={data[x]} />;
     });
   }
 
