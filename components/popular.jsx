@@ -8,11 +8,15 @@ export default function Popular() {
     return popularElements.map((x, key) => {
       return (
         // eslint-disable-next-line react/jsx-key
-        <div className="max-w-[300px] text-center ">
-          <Image className="max-w-[200px] block m-auto" src={test} alt="test" />
-          <p className="text-l">Collection</p>
-          <p>
-            Floor Price: <span>100 ETH</span>
+        <div className="max-w-[300px] h-[330px] text-center bg-zinc-700 rounded-lg mb-5">
+          <Image
+            className="max-w-[200px] max-h-[200px] block m-auto mt-6 rounded-full"
+            src={test}
+            alt="test"
+          />
+          <p className="text-2xl">Collection</p>
+          <p className="text-xl">
+            Floor Price: <span className="">100 ETH</span>
           </p>
         </div>
       );
