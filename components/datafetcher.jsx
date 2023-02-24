@@ -24,7 +24,7 @@ export default function DataFetcher() {
 
   const getData = async () => {
     try {
-      const response = await fetchData();
+      const response = await fetchData(nftContracts);
       setData(response);
     } catch (error) {
       console.log(error);

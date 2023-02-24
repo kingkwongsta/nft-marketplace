@@ -7,7 +7,7 @@ const config = {
 };
 const alchemy = new Alchemy(config);
 
-async function test() {
+async function getCollection(nftContracts) {
   //   BAYC address
   const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
   const AzukiAddress = "0xED5AF388653567Af2F388E6224dC7C4b3241C544";
@@ -18,11 +18,14 @@ async function test() {
   // Flag to omit metadata
   const omitMetadata = false;
 
-  for (let i = 0; i < NFTAddress.length; i++) {
+  for (let i = 0; i < nftContracts.length; i++) {
     console.log("fetching data");
-    let { nfts } = await alchemy.nft.getNftsForContract(NFTAddress[i], {
-      omitMetadata: omitMetadata,
-    });
+    let { nfts } = await alchemy.nft.getNftsForContract(
+      nftContracts[i].address,
+      {
+        omitMetadata: omitMetadata,
+      }
+    );
 
     //store image urls in array
     let k = 0;
@@ -34,17 +37,42 @@ async function test() {
       k++;
     }
     NFTData.push({
-      address: NFTAddress[i],
+      address: nftContracts[i].address,
       img: images,
       collection: nfts[0].contract.openSea.collectionName,
       desc: nfts[0].contract.openSea.description,
     });
   }
   return NFTData;
+
+  // //////////
+  // for (let i = 0; i < NFTAddress.length; i++) {
+  //   console.log("fetching data");
+  //   let { nfts } = await alchemy.nft.getNftsForContract(NFTAddress[i], {
+  //     omitMetadata: omitMetadata,
+  //   });
+
+  //   //store image urls in array
+  //   let k = 0;
+  //   let images = [];
+
+  //   for (let nft of nfts) {
+  //     let temp = nft.rawMetadata.image.slice(7);
+  //     images[k] = `https://ipfs.io/ipfs/${temp}`;
+  //     k++;
+  //   }
+  //   NFTData.push({
+  //     address: NFTAddress[i],
+  //     img: images,
+  //     collection: nfts[0].contract.openSea.collectionName,
+  //     desc: nfts[0].contract.openSea.description,
+  //   });
+  // }
+  // return NFTData;
 }
 
 //GET ALL DATA, NO TRANSFORM
-async function test2() {
+async function allData() {
   const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
   const omitMetadata = false;
   let { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
@@ -53,4 +81,4 @@ async function test2() {
   return nfts;
 }
 
-export default test;
+export default getCollection;
