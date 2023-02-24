@@ -9,6 +9,18 @@ export default function DataFetcher() {
 
   const nftContracts = [
     {
+      name: "Bored Ape Yatch Club",
+      address: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+    },
+    {
+      name: "Azuki",
+      address: "0xED5AF388653567Af2F388E6224dC7C4b3241C544",
+    },
+    {
+      name: "Doodles",
+      address: "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e",
+    },
+    {
       name: "Bored Ape Kennel Club",
       address: "0xba30E5F9Bb24caa003E9f2f0497Ad287FDF95623",
     },
