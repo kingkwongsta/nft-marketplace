@@ -3,6 +3,7 @@ import Image from "next/image";
 import heroImage from "../public/images/Image Placeholder.png";
 import rocket from "../public/images/rocket.png";
 import artistIcon from "../public/images/Artist Icon Placeholder.png";
+import data from "../pages/api/cleanNFTData";
 
 export default function Hero() {
   return (
@@ -42,7 +43,9 @@ export default function Hero() {
       <div className="hero-right flex-auto basis-1/2 ">
         <div className="hero-img">
           <Image
-            src={heroImage}
+            src={data[0].img[0]}
+            width={510}
+            height={401}
             alt="heroImage"
             className="w-full"
             // style={{ position: "relative", width: "100%", height: "100%" }}
