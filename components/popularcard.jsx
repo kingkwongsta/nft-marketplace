@@ -17,7 +17,7 @@ export default function PopularCard({ data }) {
       />
       <p className="text-2xl font-medium mb-2">{data.collection}</p>
       <p className="text-xl text-slate-300	">
-        Floor Price: <span className="">100 ETH</span>
+        Floor Price: <span className="">{data.floor} ETH</span>
       </p>
     </div>
   );
