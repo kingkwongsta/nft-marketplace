@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import fetchData from "../pages/api/nft";
+import getCollection from "../pages/api/nft";
 
 export default function DataFetcher() {
   const [data, setData] = useState();
@@ -24,7 +24,7 @@ export default function DataFetcher() {
 
   const getData = async () => {
     try {
-      const response = await fetchData(nftContracts);
+      const response = await getCollection(nftContracts);
       setData(response);
     } catch (error) {
       console.log(error);
