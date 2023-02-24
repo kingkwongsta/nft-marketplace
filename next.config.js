@@ -10,6 +10,10 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "**.alchemy.com",
+      },
+      {
+        protocol: "https",
         hostname: "ipfs.io",
         // port: "",
         // pathname: "/account123/**",

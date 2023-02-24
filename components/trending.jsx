@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import TrendingCard from "./trendingcard";
-//*** */ REMOVE COMMENT FOR API CALL
-// import fetchData from "../pages/api/nft.js";
+//*** FOR API CALL
+import fetchData from "../pages/api/nft.js";
 import nftData from "../pages/api/cleanNFTData.js";
 
 export default function Trending() {
