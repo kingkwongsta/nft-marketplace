@@ -36,7 +36,7 @@ export default function Home() {
       </Head>
       <main>
         {/* <Navigation /> */}
-        <DataFetcher />
+        {/* <DataFetcher /> */}
         <Hero />
         <Popular />
         {/* <Trending /> */}
