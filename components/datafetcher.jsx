@@ -7,6 +7,21 @@ export default function DataFetcher() {
     getData();
   }, []);
 
+  const nftContracts = [
+    {
+      name: "Bored Ape Kennel Club",
+      address: "0xba30E5F9Bb24caa003E9f2f0497Ad287FDF95623",
+    },
+    {
+      name: "Meebits",
+      address: "0x7Bd29408f11D2bFC23c34f18275bBf23bB716Bc7",
+    },
+    {
+      name: "Cool Cats",
+      address: "0x1a92f7381b9f03921564a437210bb9396471050c",
+    },
+  ];
+
   const getData = async () => {
     try {
       const response = await fetchData();
