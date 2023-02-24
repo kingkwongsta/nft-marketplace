@@ -6,6 +6,9 @@ import artistIcon from "../public/images/Artist Icon Placeholder.png";
 import data from "../pages/api/cleanNFTData";
 
 export default function Hero() {
+  const index = data[0].desc.indexOf(".");
+  const description = data[0].desc.substring(0, index + 1);
+
   return (
     <div className="hero flex mt-36 mx-36 mb-20">
       <div className="hero-left flex-auto basis-1/2 mr-12">
@@ -40,26 +43,20 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="hero-right flex-auto basis-1/2">
-        <div className="hero-img px-9">
-          {/* <div className="hero-img bg-zinc-700 rounded-t-lg p-9"> */}
+      <div className="hero-right flex-auto basis-1/2 justify-center">
+        <div className="hero-img rounded-t-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
           <Image
             src={data[0].img[0]}
             width={400}
-            height={350}
+            height={300}
             alt="heroImage"
-            className="w-full rounded-lg"
+            className="rounded-lg w-full"
           />
-          <div className="bg-zinc-700 rounded-lg h-28">
-            <h3 className="ml-6 pt-5 text-2xl font-semibold">Space Walking</h3>
-            <h4 className="flex ml-6 pt-2 text-lg">
-              <Image
-                src={artistIcon}
-                alt="Artist Icon"
-                className="w-6 h-6 mt-[3px] mr-3"
-              />{" "}
-              Artist Here
-            </h4>
+          <div className="bg-zinc-700 rounded-lg h-[150px]">
+            <h3 className="ml-6 pt-5 text-2xl font-semibold">
+              {data[0].collection}
+            </h3>
+            <h4 className="flex ml-6 pt-2 text-lg">{description}</h4>
           </div>
         </div>
       </div>
