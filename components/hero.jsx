@@ -40,17 +40,17 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="hero-right flex-auto basis-1/2 ">
-        <div className="hero-img">
+      <div className="hero-right flex-auto basis-1/2">
+        <div className="hero-img px-9">
+          {/* <div className="hero-img bg-zinc-700 rounded-t-lg p-9"> */}
           <Image
             src={data[0].img[0]}
-            width={510}
-            height={401}
+            width={400}
+            height={350}
             alt="heroImage"
-            className="w-full"
-            // style={{ position: "relative", width: "100%", height: "100%" }}
+            className="w-full rounded-lg"
           />
-          <div className="bg-zinc-700 rounded-b-lg h-28">
+          <div className="bg-zinc-700 rounded-lg h-28">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">Space Walking</h3>
             <h4 className="flex ml-6 pt-2 text-lg">
               <Image
