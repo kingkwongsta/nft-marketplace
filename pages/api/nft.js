@@ -7,11 +7,12 @@ const config = {
 };
 const alchemy = new Alchemy(config);
 
-async function getCollection(nftContracts) {
+export async function getCollection(nftContracts) {
   const NFTData = [];
 
   // Flag to omit metadata
   const omitMetadata = false;
+  const limit = 10;
 
   for (let i = 0; i < nftContracts.length; i++) {
     console.log("fetching data");
@@ -23,32 +24,49 @@ async function getCollection(nftContracts) {
     );
 
     //store image urls in array
-    let k = 0;
     let images = [];
 
-    for (let nft of nfts) {
-      let temp = nft.rawMetadata.image.slice(7);
-      images[k] = `https://ipfs.io/ipfs/${temp}`;
-      k++;
+    for (let i = 0; i < 10; i++) {
+      // images[i] = nfts[i].media[i].gateway;
+      images[i] = nfts[i].media[0].gateway;
     }
     NFTData.push({
       address: nftContracts[i].address,
       img: images,
       collection: nfts[0].contract.openSea.collectionName,
       desc: nfts[0].contract.openSea.description,
+      floor: nfts[0].contract.openSea.floorPrice,
+      supply: nfts[0].contract.totalSupply,
+      discord: nfts[0].contract.openSea.discordUrl,
+      website: nfts[0].contract.openSea.externalUrl,
+      lastUpdated: nfts[0].contract.openSea.lastIngestedAt,
     });
   }
+
+  //OLDER METHOD FOR GETTING IMAGE FROM METADATA KEY/Value
+  //   for (let nft of nfts) {
+  //     let temp = nft.rawMetadata.image.slice(7);
+  //     images[k] = `https://ipfs.io/ipfs/${temp}`;
+  //     k++;
+  //   }
+  //   NFTData.push({
+  //     address: nftContracts[i].address,
+  //     img: images,
+  //     collection: nfts[0].contract.openSea.collectionName,
+  //     desc: nfts[0].contract.openSea.description,
+  //   });
+  // }
   return NFTData;
 }
 
 //GET ALL DATA, NO TRANSFORM
-async function allData() {
-  const BAYCAddress = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
+export async function getAllData(nftContracts) {
+  console.log("fetching data");
   const omitMetadata = false;
-  let { nfts } = await alchemy.nft.getNftsForContract(BAYCAddress, {
+  const setLimit = 10;
+  let { nfts } = await alchemy.nft.getNftsForContract(nftContracts, {
     omitMetadata: omitMetadata,
+    limit: setLimit,
   });
   return nfts;
 }
-
-export default getCollection;

@@ -6,11 +6,12 @@ import data from "../pages/api/cleanNFTData";
 
 export default function Popular() {
   function renderPopular() {
-    const popularElements = [0, 1, 2];
+    const popularElements = [0, 1, 2, 3, 4, 5];
     return popularElements.map((x, key) => {
       return <PopularCard key={key} data={data[x]} />;
     });
   }
+  console.log(data);
 
   return (
     <div className="mx-36 mb-20">
