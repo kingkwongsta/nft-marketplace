@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import heroImage from "../public/images/Image Placeholder.png";
 import rocket from "../public/images/rocket.png";
@@ -6,8 +6,13 @@ import artistIcon from "../public/images/Artist Icon Placeholder.png";
 import data from "../pages/api/cleanNFTData";
 
 export default function Hero() {
-  const index = data[0].desc.indexOf(".");
-  const description = data[0].desc.substring(0, index + 1);
+  const [randomNum, setRandomNum] = useState(0);
+  const index = data[randomNum].desc.indexOf(".");
+  const description = data[randomNum].desc.substring(0, index + 1);
+
+  useEffect(() => {
+    setRandomNum(Math.floor(Math.random() * 6));
+  }, []);
 
   return (
     <div className="hero flex mt-36 mx-36 mb-20">
@@ -46,15 +51,15 @@ export default function Hero() {
       <div className="hero-right flex-auto basis-1/2 justify-center">
         <div className="hero-img rounded-t-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
           <Image
-            src={data[0].img[0]}
+            src={data[randomNum].img[0]}
             width={400}
             height={300}
             alt="heroImage"
-            className="rounded-lg w-full"
+            className="rounded-lg w-full max-h-[400px]"
           />
           <div className="bg-zinc-700 rounded-lg h-[150px]">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
-              {data[0].collection}
+              {data[randomNum].collection}
             </h3>
             <h4 className="flex ml-6 pt-2 text-lg">{description}</h4>
           </div>
