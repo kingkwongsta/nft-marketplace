@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import trendPlaceholder from "../public/images/Trending-Placeholder.png";
 import additionalNFT from "../public/images/additionalNFT.png";
 
 export default function TrendingCard({ img, collection, desc }) {
