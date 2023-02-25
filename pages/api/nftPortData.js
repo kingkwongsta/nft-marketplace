@@ -1,6 +1,6 @@
 // NFTPORT DATA
 
-const data = {
+export const nftData = {
   response: "OK",
   nfts: [
     {
@@ -2172,4 +2172,32 @@ const data = {
   total: 10000,
 };
 
-export default data;
+export const salesData = {
+  response: "OK",
+  statistics: {
+    one_day_volume: 19258.559009999994,
+    one_day_change: 6.716747339957167,
+    one_day_sales: 303,
+    one_day_average_price: 63.559600693069285,
+    seven_day_volume: 51576.151151358055,
+    seven_day_change: 3.9259842944786185,
+    seven_day_sales: 725,
+    seven_day_average_price: 71.13951882945939,
+    thirty_day_volume: 74090.61187216053,
+    thirty_day_change: 0.94532745050062,
+    thirty_day_sales: 1024,
+    thirty_day_average_price: 72.35411315640677,
+    total_volume: 887548.9683024493,
+    total_sales: 30217,
+    total_supply: 9998,
+    total_minted: 9998,
+    num_owners: 5896,
+    average_price: 29.372504494239976,
+    market_cap: 711252.909256935,
+    floor_price: 68.39,
+    floor_price_historic_one_day: 68.35,
+    floor_price_historic_seven_day: 76,
+    floor_price_historic_thirty_day: 71.3474,
+    updated_date: "2023-02-25T08:27:05.592349",
+  },
+};
