@@ -14,7 +14,9 @@ export default function Collection() {
           alt="placeholder"
         />
       </div>
-      <div className="section-stats basis-2/5">stats</div>
+      <div className="section-stats basis-2/5">
+        {data.contract.name.replace(/([A-Z])/g, " $1").trim()}
+      </div>
       <div className="section-info basis-2/5">info</div>
     </div>
   );
