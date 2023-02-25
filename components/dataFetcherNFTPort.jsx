@@ -1,18 +1,25 @@
-import getCollection from "../pages/api/nftport";
+import { getCollection, getSales } from "../pages/api/nftport";
 import { useState, useEffect } from "react";
 
 export default function DataFetcherNFTPort() {
   const [data, setData] = useState();
+  const [sales, setSales] = useState();
+
   useEffect(() => {
     loadData();
   }, []);
 
   const loadData = async () => {
     const response = await getCollection();
+    const response2 = await getSales();
     setData(response);
+    setSales(response2);
   };
 
-  const handleClick = () => console.log(data.contract);
+  const handleClick = () => {
+    console.log(data.contract);
+    console.log(sales);
+  };
 
   return (
     <div className="text-center">
