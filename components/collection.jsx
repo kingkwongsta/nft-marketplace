@@ -1,9 +1,19 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import trendPlaceholder from "../public/images/Trending-Placeholder.png";
+import getCollection from "../pages/api/nftport";
 
 export default function Collection() {
   const [data, setData] = useState();
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = async () => {
+    const response = await getCollection();
+    setData(response);
+  };
+
   return (
     <div className="container flex flex-row">
       <div className="section-img basis-1/5">

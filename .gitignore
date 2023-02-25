@@ -31,5 +31,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-# private data
-/private
+# # private data
+# /private
