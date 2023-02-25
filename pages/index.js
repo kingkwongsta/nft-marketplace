@@ -4,6 +4,7 @@ import Navigation from "../components/navigation";
 import Hero from "../components/hero";
 import Trending from "../components/trending";
 import Popular from "../components/popular";
+import Collection from "@/components/collection";
 import DataFetcher from "@/components/datafetcher";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -37,8 +38,9 @@ export default function Home() {
       <main>
         {/* <Navigation /> */}
         {/* <DataFetcher /> */}
-        <Hero />
-        <Popular />
+        <Collection />
+        {/* <Hero />
+        <Popular /> */}
         {/* <Trending /> */}
       </main>
     </QueryClientProvider>
