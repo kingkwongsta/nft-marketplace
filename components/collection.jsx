@@ -1,24 +1,14 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import trendPlaceholder from "../public/images/Trending-Placeholder.png";
-import getCollection from "../pages/api/nftport";
+import data from "../pages/api/nftPortData";
 
 export default function Collection() {
-  const [data, setData] = useState();
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    const response = await getCollection();
-    setData(response);
-  };
-
   return (
     <div className="container flex flex-row">
       <div className="section-img basis-1/5">
         <Image
-          src={trendPlaceholder}
+          src={data.contract.metadata.cached_thumbnail_url}
           width={200}
           height={200}
           alt="placeholder"
