@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Popular from "./popular";
+import discord from "../public/images/discord.png";
 import { nftData, salesData } from "../pages/api/nftPortData";
 import data2 from "../pages/api/cleanNFTData";
 
@@ -71,11 +72,14 @@ export default function Collection() {
             {renderStats()}
           </div>
         </div>
-        <div className="section-info basis-2/5 flex">
-          <div>
-            <div className="m-auto px-12">
-              {nftData.contract.metadata.description}
+        <div className="section-info basis-2/5 flex items-center justify-center">
+          {/* <div className="socials flex">
+            <div>
+              <a href={nftData.contract.metadata.di}><Image src={discord} width="300" height="300" alt="discord"/></a>
             </div>
+          </div> */}
+          <div>
+            <div className="px-12">{nftData.contract.metadata.description}</div>
           </div>
         </div>
       </div>
