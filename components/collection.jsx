@@ -23,24 +23,24 @@ export default function Collection() {
         />
       </div>
       <div className="section-stats basis-2/5">
-        <div className="stat-title">
+        <div className="stat-title text-4xl font-medium mb-8">
           {nftData.contract.name.replace(/([A-Z])/g, " $1").trim()}
         </div>
-        <div className="stat-details-section grid grid-cols-2">
+        <div className="stat-details-section grid grid-cols-2 gap-3 text-xl uppercase">
           <div>Floor: {salesData.statistics.floor_price} ETH</div>
-          <div>
+          <div className="">
             Total Vol: {Math.round(salesData.statistics.total_volume)} ETH
           </div>
-          <div>
+          <div className="">
             Market Cap: {Math.round(salesData.statistics.market_cap)} ETH
           </div>
-          <div>
+          <div className="">
             Average Sale(24h):{" "}
             {Math.round(salesData.statistics.one_day_average_price * 10) / 10}{" "}
             ETH
           </div>
-          <div>Owners: {salesData.statistics.num_owners}</div>
-          <div>Supply: {salesData.statistics.total_supply}</div>
+          <div className="">Owners: {salesData.statistics.num_owners}</div>
+          <div className="">Supply: {salesData.statistics.total_supply}</div>
         </div>
       </div>
       <div className="section-info basis-2/5">info</div>
