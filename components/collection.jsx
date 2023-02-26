@@ -64,14 +64,20 @@ export default function Collection() {
           />
         </div>
         <div className="section-stats basis-2/5">
-          <div className="stat-title text-4xl font-medium mb-8">
+          <div className="stat-title text-4xl font-semibold mb-8">
             {nftData.contract.name.replace(/([A-Z])/g, " $1").trim()}
           </div>
           <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
             {renderStats()}
           </div>
         </div>
-        <div className="section-info basis-2/5">info</div>
+        <div className="section-info basis-2/5 flex">
+          <div>
+            <div className="m-auto px-12">
+              {nftData.contract.metadata.description}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
