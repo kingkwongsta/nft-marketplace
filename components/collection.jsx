@@ -62,15 +62,15 @@ export default function Collection() {
             height="250"
             alt="bayc"
           />
-          <p className="text-lg my-4">#{nft.token_id}</p>
+          <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
         </div>
       );
     });
   }
 
   return (
-    <>
-      <div className="container flex flex-row">
+    <div className="mx-36">
+      <div className="container flex flex-row mb-16">
         <div className="section-img basis-1/5 flex justify-center">
           <Image
             className="min-w-[230px]"
@@ -102,6 +102,6 @@ export default function Collection() {
       <div className="collection-imgs grid grid-cols-4">
         {renderCollection()}
       </div>
-    </>
+    </div>
   );
 }
