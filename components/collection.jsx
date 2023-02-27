@@ -52,6 +52,22 @@ export default function Collection() {
       );
     });
   }
+  function renderCollection() {
+    return nftData.nfts.map((nft, index) => {
+      return (
+        <div className="card" key={index}>
+          <Image
+            src={nft.cached_file_url}
+            width="250"
+            height="250"
+            alt="bayc"
+          />
+          <p className="text-lg my-4">#{nft.token_id}</p>
+        </div>
+      );
+    });
+  }
+
   return (
     <>
       <div className="container flex flex-row">
@@ -82,6 +98,9 @@ export default function Collection() {
             <div className="px-12">{nftData.contract.metadata.description}</div>
           </div>
         </div>
+      </div>
+      <div className="collection-imgs grid grid-cols-4">
+        {renderCollection()}
       </div>
     </>
   );
