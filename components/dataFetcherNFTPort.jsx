@@ -1,18 +1,20 @@
+//Get data from NFTPort by temporarily enabling this component
 import { getCollection, getSales } from "../pages/api/nftport";
 import { useState, useEffect } from "react";
 
 export default function DataFetcherNFTPort() {
-  const [data, setData] = useState();
+  const [collection, setCollection] = useState();
   const [sales, setSales] = useState();
 
   useEffect(() => {
     loadData();
   }, []);
 
+  //function to get data from NFTPort API Call file
   const loadData = async () => {
     const response = await getCollection();
     const response2 = await getSales();
-    setData(response);
+    setCollection(response);
     setSales(response2);
   };
 
