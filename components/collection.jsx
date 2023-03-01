@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { nftData, salesData } from "../pages/api/nftPortData";
+// import { nftData, salesData } from "../pages/api/nftPortData";
 import CollectionInfo from "./collectioninfo";
 import { getSales, getCollection } from "../pages/api/nftport.js";
 
@@ -11,16 +11,21 @@ const address = [
 
 export default function Collection() {
   const [salesData, setSalesData] = useState();
+  const [nftData, setNFTData] = useState();
 
   useEffect(() => {
-    getSalesData();
+    getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getSalesData = async () => {
+  const getData = async () => {
     try {
       const res = await getSales(address[2].address);
+      const res2 = await getCollection(address[2].address);
       setSalesData(res);
+      setNFTData(res2);
+      console.log(res);
+      console.log(res2);
     } catch (err) {
       console.log(err);
     }

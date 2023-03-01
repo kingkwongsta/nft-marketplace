@@ -1,4 +1,4 @@
-export async function getCollection() {
+export async function getCollection(address) {
   const options = {
     method: "GET",
     headers: {
@@ -8,7 +8,7 @@ export async function getCollection() {
   };
 
   const response = await fetch(
-    "https://api.nftport.xyz/v0/nfts/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d?chain=ethereum&page_number=1&page_size=50&include=metadata&refresh_metadata=false",
+    `https://api.nftport.xyz/v0/nfts/${address}?chain=ethereum&page_number=1&page_size=50&include=metadata&refresh_metadata=false`,
     options
   );
   const nftData = await response.json();
