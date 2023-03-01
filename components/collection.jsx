@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
+//HARDCODED DATA FROM API CALLS
 // import { nftData, salesData } from "../pages/api/nftPortData";
 import CollectionInfo from "./collectioninfo";
 import { getSales, getCollection } from "../pages/api/nftport.js";
@@ -20,51 +22,46 @@ export default function Collection() {
 
   const getData = async () => {
     try {
-      const res = await getSales(address[2].address);
-      const res2 = await getCollection(address[2].address);
+      const res = await getSales(address[1].address);
+      setTimeout(async () => {
+        const res2 = await getCollection(address[1].address);
+        setNFTData(res2);
+        console.log(res2);
+      }, 1000);
       setSalesData(res);
-      setNFTData(res2);
       console.log(res);
-      console.log(res2);
     } catch (err) {
       console.log(err);
     }
   };
 
-  // const collectionName = nftData.contract.name
-  //   .replace(/([A-Z])/g, " $1")
-  //   .trim();
-
-  // const index = data2.findIndex((x) => x.collection === collectionName);
-  // console.log(index);
-
-  // function renderCollection() {
-  //   return nftData.nfts.map((nft, index) => {
-  //     return (
-  //       <div className="card" key={index}>
-  //         <Image
-  //           src={nft.cached_file_url}
-  //           width="250"
-  //           height="250"
-  //           alt="bayc"
-  //         />
-  //         <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
-  //       </div>
-  //     );
-  //   });
-  // }
+  function renderCollection() {
+    return nftData.nfts.map((nft, index) => {
+      return (
+        <div className="card" key={index}>
+          <Image
+            src={nft.cached_file_url}
+            width="250"
+            height="250"
+            alt="bayc"
+          />
+          <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
+        </div>
+      );
+    });
+  }
 
   return (
     <div className="mx-36">
       <div>
-        {salesData === undefined ? (
-          <p>Loading</p>
+        {nftData === undefined ? (
+          <p>Loading Due to API Rate Limit</p>
         ) : (
           <CollectionInfo salesData={salesData} nftData={nftData} />
         )}
       </div>
       <div className="collection-imgs grid grid-cols-4">
-        {/* {renderCollection()} */}
+        {/* {nftData === undefined ? <p>Loading</p> : renderCollection()} */}
       </div>
     </div>
   );
