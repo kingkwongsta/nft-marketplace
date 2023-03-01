@@ -1,57 +1,40 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Popular from "./popular";
-import discord from "../public/images/discord.png";
-import { nftData, salesData } from "../pages/api/nftPortData";
-import data2 from "../pages/api/cleanNFTData";
+//HARDCODED DATA FROM API CALLS
+// import { nftData, salesData } from "../pages/api/nftPortData";
+import CollectionInfo from "./collectioninfo";
+import { getSales, getCollection } from "../pages/api/nftport.js";
+
+const address = [
+  { name: "BAYC", address: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" },
+  { name: "Azuki", address: "0xED5AF388653567Af2F388E6224dC7C4b3241C544" },
+  { name: "Doodles", address: "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e" },
+];
 
 export default function Collection() {
-  const collectionName = nftData.contract.name
-    .replace(/([A-Z])/g, " $1")
-    .trim();
+  const [salesData, setSalesData] = useState();
+  const [nftData, setNFTData] = useState();
 
-  const index = data2.findIndex((x) => x.collection === collectionName);
-  console.log(index);
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const stat = [
-    {
-      metric: "Floor:",
-      amount: `${salesData.statistics.floor_price} ETH`,
-    },
-    {
-      metric: "Total Vol:",
-      amount: `${Math.round(salesData.statistics.total_volume)} ETH`,
-    },
-    {
-      metric: "Market Cap:",
-      amount: `${Math.round(salesData.statistics.market_cap)} ETH`,
-    },
-    {
-      metric: "Avg Sale(24h):",
-      amount: `${
-        Math.round(salesData.statistics.one_day_average_price * 10) / 10
-      } ETH`,
-    },
-    {
-      metric: "Owners:",
-      amount: `${salesData.statistics.num_owners}`,
-    },
-    {
-      metric: "Supply:",
-      amount: `${Math.round(salesData.statistics.total_supply)}`,
-    },
-  ];
+  const getData = async () => {
+    try {
+      const res = await getSales(address[1].address);
+      setTimeout(async () => {
+        const res2 = await getCollection(address[1].address);
+        setNFTData(res2);
+        console.log(res2);
+      }, 1000);
+      setSalesData(res);
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  function renderStats() {
-    return stat.map((stat, index) => {
-      return (
-        <div className="flex justify-between bg-zinc-700 p-2" key={index}>
-          <div>{stat.metric}</div>
-          <div>{stat.amount}</div>
-        </div>
-      );
-    });
-  }
   function renderCollection() {
     return nftData.nfts.map((nft, index) => {
       return (
@@ -70,37 +53,15 @@ export default function Collection() {
 
   return (
     <div className="mx-36">
-      <div className="container flex flex-row mb-16">
-        <div className="section-img basis-1/5 flex justify-center">
-          <Image
-            className="min-w-[230px]"
-            src={nftData.contract.metadata.cached_thumbnail_url}
-            width={200}
-            height={200}
-            alt="placeholder"
-          />
-        </div>
-        <div className="section-stats basis-2/5">
-          <div className="stat-title text-4xl font-semibold mb-8">
-            {nftData.contract.name.replace(/([A-Z])/g, " $1").trim()}
-          </div>
-          <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
-            {renderStats()}
-          </div>
-        </div>
-        <div className="section-info basis-2/5 flex items-center justify-center">
-          {/* <div className="socials flex">
-            <div>
-              <a href={nftData.contract.metadata.di}><Image src={discord} width="300" height="300" alt="discord"/></a>
-            </div>
-          </div> */}
-          <div>
-            <div className="px-12">{nftData.contract.metadata.description}</div>
-          </div>
-        </div>
+      <div>
+        {nftData === undefined ? (
+          <p>Loading Due to API Rate Limit</p>
+        ) : (
+          <CollectionInfo salesData={salesData} nftData={nftData} />
+        )}
       </div>
       <div className="collection-imgs grid grid-cols-4">
-        {renderCollection()}
+        {/* {nftData === undefined ? <p>Loading</p> : renderCollection()} */}
       </div>
     </div>
   );
