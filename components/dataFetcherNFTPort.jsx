@@ -19,7 +19,6 @@ export default function DataFetcherNFTPort() {
   };
 
   const handleClick = () => {
-    console.log(data.contract);
     console.log(sales);
   };
 
