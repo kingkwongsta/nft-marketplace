@@ -3,6 +3,12 @@ import { nftData, salesData } from "../pages/api/nftPortData";
 import CollectionInfo from "./collectioninfo";
 import { getSales, getCollection } from "../pages/api/nftport.js";
 
+const address = [
+  { name: "BAYC", address: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" },
+  { name: "Azuki", address: "0xED5AF388653567Af2F388E6224dC7C4b3241C544" },
+  { name: "Doodles", address: "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e" },
+];
+
 export default function Collection() {
   const [salesData, setSalesData] = useState();
 
@@ -13,7 +19,7 @@ export default function Collection() {
 
   const getSalesData = async () => {
     try {
-      const res = await getSales();
+      const res = await getSales(address[2].address);
       setSalesData(res);
     } catch (err) {
       console.log(err);
@@ -46,7 +52,11 @@ export default function Collection() {
   return (
     <div className="mx-36">
       <div>
-        {/* <CollectionInfo salesData={salesData} nftData={nftData} /> */}
+        {salesData === undefined ? (
+          <p>Loading</p>
+        ) : (
+          <CollectionInfo salesData={salesData} nftData={nftData} />
+        )}
       </div>
       <div className="collection-imgs grid grid-cols-4">
         {/* {renderCollection()} */}
