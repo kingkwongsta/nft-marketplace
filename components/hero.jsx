@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-right flex-auto basis-1/2 justify-center">
-        <div className="hero-img rounded-t-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
+        <div className="hero-img rounded-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
           <Image
             src={data[randomNum].img[0]}
             width={400}
