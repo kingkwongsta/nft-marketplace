@@ -2,16 +2,21 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import test from "../public/images/Image Placeholder.png";
 import PopularCard from "./popularcard";
-import data from "../pages/api/cleanNFTData";
+// import data from "../pages/api/cleanNFTData";
+import data from "../pages/api/topNFTData";
 
 export default function Popular() {
+  // function renderPopular() {
+  //   const popularElements = [0, 1, 2, 3, 4, 5];
+  //   return popularElements.map((x, key) => {
+  //     return <PopularCard key={key} data={data[x]} />;
+  //   });
+  // }
   function renderPopular() {
-    const popularElements = [0, 1, 2, 3, 4, 5];
-    return popularElements.map((x, key) => {
-      return <PopularCard key={key} data={data[x]} />;
+    return data.map((nft, key) => {
+      return <PopularCard key={key} nft={nft} />;
     });
   }
-  console.log(data);
 
   return (
     <div className="mx-36 mb-20">

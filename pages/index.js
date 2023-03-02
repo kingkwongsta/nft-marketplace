@@ -38,10 +38,10 @@ export default function Home() {
       </Head>
       <main>
         {/* <Navigation /> */}
-        <DataFetcherNFTPort />
+        {/* <DataFetcherNFTPort /> */}
         {/* <Collection /> */}
-        {/* <Hero />
-        <Popular /> */}
+        {/* <Hero /> */}
+        <Popular />
         {/* <Trending /> */}
       </main>
     </QueryClientProvider>

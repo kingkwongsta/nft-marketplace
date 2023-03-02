@@ -87,7 +87,7 @@ const data = [
   {
     chain: "ethereum",
     contract_address: "0xe75512aa3bec8f00434bbd6ad8b0a3fbff100ad6",
-    name: "",
+    name: "MGLand",
     metadata: {
       description:
         "MGLand is the largest NFT Space on blockchain, everyone can bring their NFT into space to socialize, to play games, to hold NFT exhibitions and to trade freely.\nJoin Alpha Season 3 — NFT Exhibition Event With 1,500,000 $MGL Tokens Rewards In Total.\nhttps://www.mg.land/",
