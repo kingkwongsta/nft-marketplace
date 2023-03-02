@@ -38,8 +38,8 @@ export default function Home() {
       </Head>
       <main>
         {/* <Navigation /> */}
-        {/* <DataFetcherNFTPort /> */}
-        <Collection />
+        <DataFetcherNFTPort />
+        {/* <Collection /> */}
         {/* <Hero />
         <Popular /> */}
         {/* <Trending /> */}
