@@ -40,7 +40,7 @@ export default function Home() {
         {/* <Navigation /> */}
         {/* <DataFetcherNFTPort /> */}
         {/* <Collection /> */}
-        {/* <Hero /> */}
+        <Hero />
         <Popular />
         {/* <Trending /> */}
       </main>
