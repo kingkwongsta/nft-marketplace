@@ -9,23 +9,10 @@ import Collection from "@/components/collection";
 import DataFetcher from "@/components/tools/datafetcher";
 import DataFetcherNFTPort from "@/components/tools/dataFetcherNFTPort";
 import LazyLoadComponent from "@/components/tools/LazyLoadComponent";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      refetchOnmount: false,
-      refetchOnReconnect: false,
-      retry: false,
-      staleTime: 10000,
-    },
-  },
-});
 
 export default function Home() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Head>
         <title>NFT Browse</title>
         <meta name="description" content="The Best NFT Website" />
@@ -39,8 +26,9 @@ export default function Home() {
         />
       </Head>
       <main>
+        <p>Hello</p>
         <HomePage />
       </main>
-    </QueryClientProvider>
+    </>
   );
 }
