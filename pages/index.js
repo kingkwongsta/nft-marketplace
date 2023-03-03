@@ -1,4 +1,5 @@
 import Head from "next/head";
+import HomePage from "./HomePage";
 import Image from "next/image";
 import Navigation from "../components/navigation";
 import Hero from "../components/hero";
@@ -38,13 +39,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        {/* <Navigation /> */}
-        {/* <DataFetcherNFTPort /> */}
-        {/* <Collection /> */}
-        <Hero />
-        <LazyLoadComponent />
-        {/* <Popular /> */}
-        {/* <Trending /> */}
+        <HomePage />
       </main>
     </QueryClientProvider>
   );
