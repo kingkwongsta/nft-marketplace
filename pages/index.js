@@ -5,8 +5,9 @@ import Hero from "../components/hero";
 import Trending from "../components/trending";
 import Popular from "../components/popular";
 import Collection from "@/components/collection";
-import DataFetcher from "@/components/datafetcher";
-import DataFetcherNFTPort from "@/components/dataFetcherNFTPort";
+import DataFetcher from "@/components/tools/datafetcher";
+import DataFetcherNFTPort from "@/components/tools/dataFetcherNFTPort";
+import LazyLoadComponent from "@/components/tools/LazyLoadComponent";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient({
@@ -41,7 +42,8 @@ export default function Home() {
         {/* <DataFetcherNFTPort /> */}
         {/* <Collection /> */}
         <Hero />
-        <Popular />
+        <LazyLoadComponent />
+        {/* <Popular /> */}
         {/* <Trending /> */}
       </main>
     </QueryClientProvider>

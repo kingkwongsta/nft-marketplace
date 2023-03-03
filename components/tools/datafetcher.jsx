@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCollection, getAllData } from "../pages/api/nft";
+import { getCollection, getAllData } from "../../pages/api/nft";
 
 export default function DataFetcher() {
   const [data, setData] = useState();
