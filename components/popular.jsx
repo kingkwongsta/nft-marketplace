@@ -13,9 +13,30 @@ export default function Popular() {
   //   });
   // }
   function renderPopular() {
-    return data.map((nft, key) => {
+    const shuffledData = shuffle(data);
+    console.log(shuffledData);
+    return shuffledData.map((nft, key) => {
       return <PopularCard key={key} nft={nft} />;
     });
+  }
+
+  function shuffle(array) {
+    let m = array.length,
+      t,
+      i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+
+    return array;
   }
 
   return (
