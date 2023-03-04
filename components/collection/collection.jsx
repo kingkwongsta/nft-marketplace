@@ -42,8 +42,7 @@ export default function Collection({ nftcollection }) {
     }
   };
 
-  function renderCollection() {
-    console.log(nftData);
+  function renderCollectionGallery() {
     return nftData.nfts.map((nft, index) => {
       return <Gallery key={index} nft={nft} />;
     });
@@ -59,7 +58,7 @@ export default function Collection({ nftcollection }) {
         )}
       </div>
       <div className="collection-imgs grid grid-cols-4">
-        {nftData === undefined ? <p>Loading</p> : renderCollection()}
+        {nftData === undefined ? <p>Loading</p> : renderCollectionGallery()}
       </div>
     </div>
   );
