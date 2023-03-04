@@ -5,7 +5,7 @@ import Navigation from "../components/navigation";
 import Hero from "../components/hero";
 import Trending from "../components/trending";
 import Popular from "../components/popular";
-import Collection from "@/components/collection";
+import Collection from "@/components/collection/collection";
 import DataFetcher from "@/components/tools/datafetcher";
 import DataFetcherNFTPort from "@/components/tools/dataFetcherNFTPort";
 import LazyLoadComponent from "@/components/tools/LazyLoadComponent";

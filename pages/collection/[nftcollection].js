@@ -1,12 +1,12 @@
-import Collection from "@/components/collection";
+import Collection from "@/components/collection/collection";
 import { useRouter } from "next/router";
 
-export default function CollectionDetail() {
+export default function NFTCollectionPage() {
   const router = useRouter();
   const nftcollection = router.query.nftcollection;
   return (
     <>
-      <p>{nftcollection}</p>
+      {/* Pass NFT Collection Name As Prop */}
       <Collection nftcollection={nftcollection} />
     </>
   );
