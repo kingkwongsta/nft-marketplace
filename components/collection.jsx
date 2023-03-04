@@ -4,6 +4,7 @@ import Image from "next/image";
 // import { nftData, salesData } from "../pages/api/nftPortData";
 import CollectionInfo from "./collectioninfo";
 import { getSales, getCollection } from "../pages/api/nftport.js";
+import topNFTData from "../pages/api/topNFTData";
 
 const address = [
   { name: "BAYC", address: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" },
@@ -31,14 +32,14 @@ export default function Collection({ nftcollection }) {
   const getData = async () => {
     try {
       //FIND WHICH INDEX HAS THE DATA
-      const index = address
+      const index = topNFTData
         .map((x) => {
           return x.name;
         })
         .indexOf(nftcollection);
-      const res = await getSales(address[1].address);
+      const res = await getSales(topNFTData[index].contract_address);
       setTimeout(async () => {
-        const res2 = await getCollection(address[index].address);
+        const res2 = await getCollection(topNFTData[index].contract_address);
         setNFTData(res2);
       }, 1000);
       setSalesData(res);
@@ -53,12 +54,15 @@ export default function Collection({ nftcollection }) {
     return nftData.nfts.map((nft, index) => {
       return (
         <div className="card" key={index}>
-          <Image
-            src={nft.cached_file_url}
-            width="250"
-            height="250"
-            alt="bayc"
-          />
+          {nft.cached_file_url && (
+            <Image
+              src={nft.cached_file_url}
+              width="250"
+              height="250"
+              alt="bayc"
+            />
+          )}
+          {/* <p>{nft.cached_file_url}</p> */}
           <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
         </div>
       );
