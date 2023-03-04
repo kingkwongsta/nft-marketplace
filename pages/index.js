@@ -1,14 +1,5 @@
 import Head from "next/head";
-import HomePage from "./HomePage";
-import Image from "next/image";
-import Navigation from "../components/navigation";
-import Hero from "../components/hero";
-import Trending from "../components/trending";
-import Popular from "../components/popular";
-import Collection from "@/components/collection/collection";
-import DataFetcher from "@/components/tools/datafetcher";
-import DataFetcherNFTPort from "@/components/tools/dataFetcherNFTPort";
-import LazyLoadComponent from "@/components/tools/LazyLoadComponent";
+import PopularPage from "./popular/index";
 
 import Link from "next/link";
 
@@ -24,8 +15,9 @@ export default function Home() {
       <main>
         <p>
           <Link href="/collection/">Hello</Link>
+          <Link href="/popular/">Popular</Link>
+          <PopularPage />
         </p>
-        <HomePage />
       </main>
     </>
   );

@@ -11,7 +11,6 @@ export default function Gallery({ nft }) {
           alt="bayc"
         />
       )}
-      {/* <p>{nft.cached_file_url}</p> */}
       <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
     </div>
   );
