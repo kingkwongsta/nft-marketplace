@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["Work Sans", "sans-serif"],
+      sans: ["Josefin Sans", "sans"],
       serif: ["Space Mono", "serif"],
       mono: ["Space Mono", "serif"],
     },

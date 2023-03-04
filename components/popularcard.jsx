@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import test from "../public/images/Image Placeholder.png";
 
 export default function PopularCard({ nft }) {
@@ -8,13 +9,15 @@ export default function PopularCard({ nft }) {
   }
   return (
     <div className="max-w-[300px] text-center bg-zinc-700 rounded-lg mb-5 pb-5">
-      <Image
-        className="max-w-[200px] min-h-[200px] max-h-[200px] block m-auto mt-6 rounded-md mb-5"
-        src={nft.metadata.thumbnail_url}
-        alt="test"
-        width={200}
-        height={200}
-      />
+      <Link href={`/collection/${nft.name}`}>
+        <Image
+          className="max-w-[200px] min-h-[200px] max-h-[200px] block m-auto mt-6 rounded-md mb-5"
+          src={nft.metadata.thumbnail_url}
+          alt="test"
+          width={200}
+          height={200}
+        />
+      </Link>
       <p className="text-2xl font-medium mb-2">
         {nft.name.replace(/([A-Z])/g, " $1").trim()}
       </p>
