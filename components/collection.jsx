@@ -56,6 +56,7 @@ export default function Collection({ nftcollection }) {
         <div className="card" key={index}>
           {nft.cached_file_url && (
             <Image
+              className=""
               src={nft.cached_file_url}
               width="250"
               height="250"
