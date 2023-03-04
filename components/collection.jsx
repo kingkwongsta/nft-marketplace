@@ -40,7 +40,6 @@ export default function Collection({ nftcollection }) {
       setTimeout(async () => {
         const res2 = await getCollection(address[index].address);
         setNFTData(res2);
-        console.log(res2);
       }, 1000);
       setSalesData(res);
       console.log(res);
@@ -50,6 +49,7 @@ export default function Collection({ nftcollection }) {
   };
 
   function renderCollection() {
+    console.log(nftData);
     return nftData.nfts.map((nft, index) => {
       return (
         <div className="card" key={index}>
@@ -75,7 +75,7 @@ export default function Collection({ nftcollection }) {
         )}
       </div>
       <div className="collection-imgs grid grid-cols-4">
-        {/* {nftData === undefined ? <p>Loading</p> : renderCollection()} */}
+        {nftData === undefined ? <p>Loading</p> : renderCollection()}
       </div>
     </div>
   );
