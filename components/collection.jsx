@@ -9,9 +9,17 @@ const address = [
   { name: "BAYC", address: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" },
   { name: "Azuki", address: "0xED5AF388653567Af2F388E6224dC7C4b3241C544" },
   { name: "Doodles", address: "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e" },
+  {
+    name: "BoredApeKennelClub",
+    address: "0xba30e5f9bb24caa003e9f2f0497ad287fdf95623",
+  },
+  {
+    name: "MGLand",
+    address: "0xe75512aa3bec8f00434bbd6ad8b0a3fbff100ad6",
+  },
 ];
 
-export default function Collection() {
+export default function Collection({ nftcollection }) {
   const [salesData, setSalesData] = useState();
   const [nftData, setNFTData] = useState();
 
@@ -22,9 +30,15 @@ export default function Collection() {
 
   const getData = async () => {
     try {
+      //FIND WHICH INDEX HAS THE DATA
+      const index = address
+        .map((x) => {
+          return x.name;
+        })
+        .indexOf(nftcollection);
       const res = await getSales(address[1].address);
       setTimeout(async () => {
-        const res2 = await getCollection(address[1].address);
+        const res2 = await getCollection(address[index].address);
         setNFTData(res2);
         console.log(res2);
       }, 1000);
