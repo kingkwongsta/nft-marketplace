@@ -60,11 +60,6 @@ export default function CollectionInfo({ salesData, nftData }) {
         </div>
       </div>
       <div className="section-info basis-2/5 flex items-center justify-center">
-        {/* <div className="socials flex">
-            <div>
-              <a href={nftData.contract.metadata.di}><Image src={discord} width="300" height="300" alt="discord"/></a>
-            </div>
-          </div> */}
         <div>
           <div className="px-12">{nftData.contract.metadata.description}</div>
         </div>
