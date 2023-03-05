@@ -29,7 +29,7 @@ export default function Navigation() {
           </svg>
         </button>
       </div>
-      <div class="w-full block lg:flex lg:items-center lg:w-auto lg:flex-row-reverse">
+      <div class="w-full block lg:flex lg:items-center lg:w-auto lg:flex-row-reverse mx-[200px]">
         <div class="text-4xl lg:flex-grow">
           <Link
             href="/popular/"
