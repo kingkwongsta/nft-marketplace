@@ -37,6 +37,12 @@ export default function Navigation() {
           >
             Popular
           </Link>
+          <Link
+            href="/collection/"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Collection
+          </Link>
         </div>
         {/* <div>
           <a
