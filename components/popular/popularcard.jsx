@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import test from "../public/images/Image Placeholder.png";
 
 export default function PopularCard({ nft }) {
   function randomNum() {

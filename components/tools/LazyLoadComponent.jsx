@@ -1,7 +1,7 @@
 //Get data from NFTPort by temporarily enabling this component
 import { useState, useEffect } from "react";
 
-import Popular from "../popular";
+import Popular from "../popular/popular";
 
 export default function LazyLoadComponent({ component }) {
   const [data, setData] = useState(true);

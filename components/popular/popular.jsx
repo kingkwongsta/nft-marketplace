@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import test from "../public/images/Image Placeholder.png";
 import PopularCard from "./popularcard";
 // import data from "../pages/api/cleanNFTData";
-import data from "../pages/api/topNFTData";
+import data from "../../pages/api/topNFTData";
 
 export default function Popular() {
   // function renderPopular() {
