@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import heroImage from "../public/images/Image Placeholder.png";
 import rocket from "../public/images/rocket.png";
-import artistIcon from "../public/images/Artist Icon Placeholder.png";
-import data from "../pages/api/cleanNFTData";
+import data from "../pages/api/topNFTData";
 
 export default function Hero() {
   const [randomNum, setRandomNum] = useState(0);
@@ -11,7 +9,7 @@ export default function Hero() {
   const description = data[randomNum].desc.substring(0, index + 1);
 
   useEffect(() => {
-    setRandomNum(Math.floor(Math.random() * 6));
+    setRandomNum(Math.floor(Math.random() * 10));
   }, []);
 
   return (
