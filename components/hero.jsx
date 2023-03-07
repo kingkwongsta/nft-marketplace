@@ -5,12 +5,12 @@ import data from "../pages/api/topNFTData";
 
 export default function Hero() {
   const [randomNum, setRandomNum] = useState(0);
-  const index = data[randomNum].desc.indexOf(".");
-  const description = data[randomNum].desc.substring(0, index + 1);
 
   useEffect(() => {
     setRandomNum(Math.floor(Math.random() * 10));
   }, []);
+
+  const description = data[randomNum].metadata.description.split(".");
 
   return (
     <div className="hero flex mt-36 mx-36 mb-20">
@@ -49,17 +49,19 @@ export default function Hero() {
       <div className="hero-right flex-auto basis-1/2 justify-center">
         <div className="hero-img rounded-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
           <Image
-            src={data[randomNum].img[0]}
-            width={400}
+            src={data[randomNum].metadata.thumbnail_url}
+            width={300}
             height={300}
             alt="heroImage"
-            className="rounded-lg w-full max-h-[400px]"
+            className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
           />
           <div className="bg-zinc-700 rounded-lg h-[150px]">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
-              {data[randomNum].collection}
+              {data[randomNum].name.replace(/([A-Z])/g, " $1").trim()}
             </h3>
-            <h4 className="flex ml-6 pt-2 text-lg">{description}</h4>
+            <h4 className="flex ml-6 pt-2 text-lg">
+              {description[0]} {description[1]}
+            </h4>
           </div>
         </div>
       </div>
