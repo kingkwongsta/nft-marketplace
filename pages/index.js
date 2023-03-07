@@ -19,7 +19,7 @@ export default function Home() {
         <Link href="/collection/">Hello</Link>
         <Link href="/popular/">Popular</Link>
         <Hero />
-        {/* <PopularPage /> */}
+        <PopularPage />
       </main>
     </>
   );

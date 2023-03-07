@@ -56,7 +56,6 @@ export default function Hero() {
             height={300}
             alt="heroImage"
             className="rounded-lg w-full max-h-[400px]"
-            priority
           />
           <div className="bg-zinc-700 rounded-lg h-[150px]">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
