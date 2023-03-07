@@ -12,14 +12,14 @@ export default function Popular() {
   // }
   function renderPopular() {
     const shuffledData = shuffle(data);
-    // Non-random collection list
-    return data.map((nft, key) => {
-      return <PopularCard key={key} nft={nft} />;
-    });
-    //Randomize collection list
-    // return shuffledData.map((nft, key) => {
+    // // Non-random collection list
+    // return data.map((nft, key) => {
     //   return <PopularCard key={key} nft={nft} />;
     // });
+    // //Randomize collection list
+    return shuffledData.map((nft, key) => {
+      return <PopularCard key={key} nft={nft} />;
+    });
   }
 
   function shuffle(array) {
