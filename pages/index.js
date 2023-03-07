@@ -18,8 +18,8 @@ export default function Home() {
         <Navigation />
         <Link href="/collection/">Hello</Link>
         <Link href="/popular/">Popular</Link>
-        {/* <Hero /> */}
-        {/* <PopularPage /> */}
+        <Hero />
+        <PopularPage />
       </main>
     </>
   );

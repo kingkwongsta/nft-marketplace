@@ -22,7 +22,7 @@ export default function Navigation() {
       <div className="block lg:hidden">
         <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
           <svg
-            class="fill-current h-3 w-3"
+            className="fill-current h-3 w-3"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -31,17 +31,17 @@ export default function Navigation() {
           </svg>
         </button>
       </div>
-      <div class="w-full block lg:flex lg:items-center lg:w-auto lg:flex-row-reverse mx-[200px]">
-        <div class="text-4xl lg:flex-grow">
+      <div className="w-full block lg:flex lg:items-center lg:w-auto lg:flex-row-reverse mx-[200px]">
+        <div className="text-4xl lg:flex-grow">
           <Link
             href="/popular/"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
             Popular
           </Link>
           <Link
             href="/collection/"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
             Collection
           </Link>
