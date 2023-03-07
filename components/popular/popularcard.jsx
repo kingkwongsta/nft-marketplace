@@ -1,12 +1,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import test from "../public/images/Image Placeholder.png";
 
 export default function PopularCard({ nft }) {
-  function randomNum() {
-    return Math.floor(Math.random() * 10);
-  }
   return (
     <div className="max-w-[300px] text-center bg-zinc-700 rounded-lg mb-5 pb-5">
       <Link href={`/collection/${nft.name}`}>

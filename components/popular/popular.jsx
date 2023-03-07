@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import test from "../public/images/Image Placeholder.png";
 import PopularCard from "./popularcard";
 // import data from "../pages/api/cleanNFTData";
-import data from "../pages/api/topNFTData";
+import data from "../../pages/api/topNFTData";
 
 export default function Popular() {
   // function renderPopular() {
@@ -14,7 +12,11 @@ export default function Popular() {
   // }
   function renderPopular() {
     const shuffledData = shuffle(data);
-    console.log(shuffledData);
+    // // Non-random collection list
+    // return data.map((nft, key) => {
+    //   return <PopularCard key={key} nft={nft} />;
+    // });
+    // //Randomize collection list
     return shuffledData.map((nft, key) => {
       return <PopularCard key={key} nft={nft} />;
     });
