@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,12 +8,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ["Josefin Sans", "sans"],
-      serif: ["Space Mono", "serif"],
-      mono: ["Space Mono", "serif"],
+    extend: {
+      fontFamily: {
+        primary: ["var(--lora-font)", ...fontFamily.sans],
+        serif: ["var(--lora-font)", ...fontFamily.serif],
+      },
     },
-    extend: {},
   },
   plugins: [],
 };
