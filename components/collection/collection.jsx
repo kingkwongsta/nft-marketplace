@@ -3,8 +3,6 @@ import CollectionInfo from "./collectioninfo";
 import Gallery from "./gallery";
 //API CALLS
 import { getSales, getCollection } from "../../pages/api/nftport.js";
-
-//!!!!!!Need to replace this with variable containing all NFT address in PudgeyPenguins format!!!!
 import topNFTData from "../../pages/api/topNFTData";
 
 export default function Collection({ nftcollection }) {
