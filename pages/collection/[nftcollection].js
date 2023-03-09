@@ -7,6 +7,7 @@ export default function NFTCollectionPage() {
   return (
     <>
       {/* Pass NFT Collection Name As Prop */}
+      {/* NFT Name must have no spaces, one word */}
       <Collection nftcollection={nftcollection} />
     </>
   );
