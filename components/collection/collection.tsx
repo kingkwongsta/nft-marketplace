@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CollectionInfo from "./collectioninfo";
+import CollectionInfo from "./collectioninfo.tsx";
 import Gallery from "./gallery";
 //API CALLS
 import { getSales, getCollection } from "../../pages/api/nftport.js";
