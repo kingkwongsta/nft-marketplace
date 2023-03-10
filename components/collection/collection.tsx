@@ -9,7 +9,7 @@ export default function Collection({ nftcollection }) {
   //NFT Sales/Transaction Data - getSales API Call
   const [salesData, setSalesData] = useState();
   //NFT Image Data - getCollection API Call
-  const [nftData, setNFTData] = useState();
+  const [nftData, setNFTData] = useState([]);
 
   //Pull data from API calls on page render (once)
   useEffect(() => {
