@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import PopularCard from "./popularcard";
-// import data from "../pages/api/cleanNFTData";
 import data from "../../pages/api/topNFTData";
 
 export default function Popular() {

@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import { useEffect } from "react";
 import { Inter, Work_Sans } from "@next/font/google";
 import { Lora } from "@next/font/google";
