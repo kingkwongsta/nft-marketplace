@@ -7,9 +7,9 @@ import topNFTData from "../../pages/api/topNFTData";
 
 export default function Collection({ nftcollection }) {
   //NFT Sales/Transaction Data - getSales API Call
-  const [salesData, setSalesData] = useState();
+  const [salesData, setSalesData] = useState({});
   //NFT Image Data - getCollection API Call
-  const [nftData, setNFTData] = useState([]);
+  const [nftData, setNFTData] = useState({});
 
   //Pull data from API calls on page render (once)
   useEffect(() => {
@@ -34,26 +34,28 @@ export default function Collection({ nftcollection }) {
         setNFTData(res2);
       }, 200);
       setSalesData(res);
-      console.log(res);
     } catch (err) {
       console.log(err);
     }
   };
 
+  function renderCollectionInfo() {
+    if (salesData) {
+      return <CollectionInfo salesData={salesData} nftData={nftData} />;
+    }
+  }
   function renderCollectionGallery() {
-    return nftData.nfts.map((nft, index) => {
-      return <Gallery key={index} nft={nft} />;
-    });
+    if (nftData.nfts) {
+      return nftData.nfts.map((nft, index) => {
+        return <Gallery key={index} nft={nft} />;
+      });
+    }
   }
 
   return (
     <div className="mx-36">
       <div>
-        {nftData === undefined ? (
-          <p>Loading</p>
-        ) : (
-          <CollectionInfo salesData={salesData} nftData={nftData} />
-        )}
+        {salesData === undefined ? <p>Loading</p> : renderCollectionInfo()}
       </div>
       <div className="collection-imgs grid grid-cols-4">
         {nftData === undefined ? <p>Loading</p> : renderCollectionGallery()}
