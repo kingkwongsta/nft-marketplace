@@ -1,6 +1,28 @@
 import Image from "next/image";
 
-export default function CollectionInfo({ salesData, nftData }) {
+interface Props {
+  salesData: {
+    statistics: {
+      floor_price: number;
+      total_volume: number;
+      market_cap: number;
+      one_day_average_price: number;
+      num_owners: number;
+      total_supply: number;
+    };
+  };
+  nftData: {
+    contract: {
+      name: string;
+      medata: {
+        cached_thumbnail_url: string;
+        description: string;
+      };
+    };
+  };
+}
+
+export default function CollectionInfo({ salesData, nftData }: Props) {
   const stat = [
     {
       metric: "Floor:",

@@ -1,4 +1,4 @@
-import Collection from "@/components/collection/collection";
+import Collection from "../../components/collection/collection";
 import { useRouter } from "next/router";
 
 export default function NFTCollectionPage() {

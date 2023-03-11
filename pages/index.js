@@ -1,9 +1,8 @@
 import Head from "next/head";
 import PopularPage from "./popular/index";
-import Hero from "@/components/hero";
 import Navigation from "../components/navigation";
-
 import Link from "next/link";
+// import Hero from "@/components/hero";
 
 export default function Home() {
   return (
@@ -18,7 +17,7 @@ export default function Home() {
         <Navigation />
         <Link href="/collection/">Hello</Link>
         <Link href="/popular/">Popular</Link>
-        <Hero />
+        {/* <Hero /> */}
         <PopularPage />
       </main>
     </>
