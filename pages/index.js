@@ -1,6 +1,5 @@
 import Head from "next/head";
 import PopularPage from "./popular/index";
-import Navigation from "../components/navigation";
 import Link from "next/link";
 // import Hero from "@/components/hero";
 
@@ -14,9 +13,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navigation />
-        <Link href="/collection/">Hello</Link>
-        <Link href="/popular/">Popular</Link>
         {/* <Hero /> */}
         <PopularPage />
       </main>
