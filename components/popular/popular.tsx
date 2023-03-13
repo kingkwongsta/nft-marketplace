@@ -41,14 +41,16 @@ export default function Popular() {
 
   return (
     <>
-      <div className="mx-36 mb-20 font-Josefin">
+      <div className="mx-36 mt-20 mb-20 font-Josefin">
         <h2 className="text-5xl font-semibold tracking-wider leading-none mb-5">
           Popular Collections
         </h2>
         <h3 className="text-2xl mb-12 font-normal leading-normal font-Josefin">
           Checkout the Top NFT Collections on the Ethereum Network
         </h3>
-        <div className="grid grid-cols-3">{renderPopular()}</div>
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3">
+          {renderPopular()}
+        </div>
       </div>
     </>
   );

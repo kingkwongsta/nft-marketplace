@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { useEffect } from "react";
 import { Inter, Work_Sans } from "@next/font/google";
 import { Lora } from "@next/font/google";
+import Navigation from "../components/navigation";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
           }
         `}
       </style>
+      <Navigation />
       <Component {...pageProps} />
     </>
   );
