@@ -55,7 +55,7 @@ export default function Collection({ nftcollection }) {
           <CollectionInfo salesData={salesData} nftData={nftData} />
         )}
       </div>
-      <div className="collection-imgs grid grid-cols-4">
+      <div className="collection-imgs grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {nftData === undefined ? <p>Loading</p> : renderCollectionGallery()}
       </div>
     </div>
