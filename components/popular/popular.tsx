@@ -10,7 +10,7 @@ export default function Popular() {
   //   });
   // }
   function renderPopular() {
-    const shuffledData = shuffle(data);
+    const shuffledData: Array<object> = shuffle(data);
     // // Non-random collection list
     // return data.map((nft, key) => {
     //   return <PopularCard key={key} nft={nft} />;
@@ -22,7 +22,7 @@ export default function Popular() {
   }
 
   function shuffle(array) {
-    let m = array.length,
+    let m: number = array.length,
       t,
       i;
     // While there remain elements to shuffle…

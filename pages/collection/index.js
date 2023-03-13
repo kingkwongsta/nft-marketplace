@@ -1,4 +1,4 @@
-import Popular from "@/components/popular/popular";
+import Popular from "../../components/popular/popular";
 export default function CollectionList() {
   return (
     <>
