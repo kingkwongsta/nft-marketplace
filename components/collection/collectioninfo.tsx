@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface Props {
+type Props = {
   salesData: {
     statistics: {
       floor_price: number;
@@ -20,7 +20,7 @@ interface Props {
       };
     };
   };
-}
+};
 
 export default function CollectionInfo({ salesData, nftData }: Props) {
   const stat = [
