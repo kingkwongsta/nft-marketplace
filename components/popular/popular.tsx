@@ -48,7 +48,7 @@ export default function Popular() {
         <h3 className="text-2xl mb-12 font-normal leading-normal font-Josefin">
           Checkout the Top NFT Collections on the Ethereum Network
         </h3>
-        <div className="grid gap-y-8 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid min-[949px]:place-items-center min-[950px]:place-items-start min-[1120px]:gap-y-3 min-[650px]:grid-cols-1 min-[950px]:grid-cols-2 min-[1120px]:grid-cols-3 min-[1410px]:grid-cols-4">
           {renderPopular()}
         </div>
       </div>
