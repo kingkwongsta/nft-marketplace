@@ -5,11 +5,27 @@ import Gallery from "./gallery";
 import { getSales, getCollection } from "../../pages/api/nftport.js";
 import topNFTData from "../../pages/api/topNFTData";
 
+interface NFTProp {
+  nfts: {
+    cached_file_url: string;
+    token_id: number;
+  }[];
+  contract: {
+    name: string;
+    medata: {
+      cached_thumbnail_url: string;
+      description: string;
+    };
+  };
+}
+
+interface TopNFT {}
+
 export default function Collection({ nftcollection }) {
   //NFT Sales/Transaction Data - getSales API Call
   const [salesData, setSalesData] = useState();
   //NFT Image Data - getCollection API Call
-  const [nftData, setNFTData] = useState();
+  const [nftData, setNFTData] = useState<NFTProp | undefined>();
 
   //Pull data from API calls on page render (once)
   useEffect(() => {
