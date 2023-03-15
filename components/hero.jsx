@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import rocket from "../public/images/rocket.png";
 import data from "../pages/api/topNFTData";
+import Link from "next/link";
 
 export default function Hero() {
   const [randomNum, setRandomNum] = useState(0);
@@ -48,13 +49,15 @@ export default function Hero() {
       </div>
       <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[650px] sm:max-lg:max-h-[400px] bg-zinc-700">
         <div className="hero-img rounded-lg pt-10 px-16 w-[500px] ">
-          <Image
-            src={data[randomNum].metadata.thumbnail_url}
-            width={300}
-            height={300}
-            alt="heroImage"
-            className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
-          />
+          <Link href={`/collection/${data[randomNum].name}`}>
+            <Image
+              src={data[randomNum].metadata.thumbnail_url}
+              width={300}
+              height={300}
+              alt="heroImage"
+              className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+            />
+          </Link>
           <div className="bg-zinc-700 rounded-lg">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
               {data[randomNum].name.replace(/([A-Z])/g, " $1").trim()}
