@@ -32,6 +32,7 @@ export default function Collection({ nftcollection }) {
       setTimeout(async () => {
         const res2 = await getCollection(topNFTData[index].contract_address);
         setNFTData(res2);
+        console.log(res2);
       }, 200);
       setSalesData(res);
       console.log(res);
