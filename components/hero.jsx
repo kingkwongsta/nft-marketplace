@@ -13,7 +13,7 @@ export default function Hero() {
   const description = data[randomNum].metadata.description.split(".");
 
   return (
-    <div className="hero flex mt-36 mx-36 mb-20">
+    <div className="hero lg:flex mt-36 mx-36 mb-20">
       <div className="hero-left flex-auto basis-1/2 mr-12">
         <h1 className="text-6xl font-semibold tracking-wider leading-none mb-10">
           Discover Digital Art & Collect NFTs
@@ -46,7 +46,7 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="hero-right flex-auto basis-1/2 justify-center">
+      <div className="hero-right md:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center">
         <div className="hero-img rounded-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
           <Image
             src={data[randomNum].metadata.thumbnail_url}
