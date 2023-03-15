@@ -46,7 +46,7 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="hero-right md:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center">
+      <div className="hero-right sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center">
         <div className="hero-img rounded-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
           <Image
             src={data[randomNum].metadata.thumbnail_url}
