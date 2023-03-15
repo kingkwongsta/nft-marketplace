@@ -32,6 +32,7 @@ export default function Collection({ nftcollection }) {
       setTimeout(async () => {
         const res2 = await getCollection(topNFTData[index].contract_address);
         setNFTData(res2);
+        console.log(res2);
       }, 200);
       setSalesData(res);
       console.log(res);
@@ -47,7 +48,7 @@ export default function Collection({ nftcollection }) {
   }
 
   return (
-    <div className="mx-36">
+    <div className="mx-36 mt-20">
       <div>
         {nftData === undefined ? (
           <p>Loading</p>
@@ -55,7 +56,7 @@ export default function Collection({ nftcollection }) {
           <CollectionInfo salesData={salesData} nftData={nftData} />
         )}
       </div>
-      <div className="collection-imgs grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="collection-imgs grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
         {nftData === undefined ? <p>Loading</p> : renderCollectionGallery()}
       </div>
     </div>

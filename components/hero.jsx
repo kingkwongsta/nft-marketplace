@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import rocket from "../public/images/rocket.png";
 import data from "../pages/api/topNFTData";
+import Link from "next/link";
 
 export default function Hero() {
   const [randomNum, setRandomNum] = useState(0);
@@ -13,7 +14,7 @@ export default function Hero() {
   const description = data[randomNum].metadata.description.split(".");
 
   return (
-    <div className="hero flex mt-36 mx-36 mb-20">
+    <div className="hero lg:flex mt-36 mx-36 mb-20">
       <div className="hero-left flex-auto basis-1/2 mr-12">
         <h1 className="text-6xl font-semibold tracking-wider leading-none mb-10">
           Discover Digital Art & Collect NFTs
@@ -46,16 +47,18 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="hero-right flex-auto basis-1/2 justify-center">
-        <div className="hero-img rounded-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
-          <Image
-            src={data[randomNum].metadata.thumbnail_url}
-            width={300}
-            height={300}
-            alt="heroImage"
-            className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
-          />
-          <div className="bg-zinc-700 rounded-lg h-[150px]">
+      <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[650px] sm:max-lg:max-h-[400px] bg-zinc-700">
+        <div className="hero-img rounded-lg pt-10 px-16 w-[500px] ">
+          <Link href={`/collection/${data[randomNum].name}`}>
+            <Image
+              src={data[randomNum].metadata.thumbnail_url}
+              width={300}
+              height={300}
+              alt="heroImage"
+              className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+            />
+          </Link>
+          <div className="bg-zinc-700 rounded-lg">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
               {data[randomNum].name.replace(/([A-Z])/g, " $1").trim()}
             </h3>

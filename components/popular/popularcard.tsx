@@ -13,7 +13,7 @@ type PopularCardProps = {
 
 export default function PopularCard({ nft }: PopularCardProps) {
   return (
-    <div className="max-w-[300px] text-center bg-zinc-700 rounded-lg mb-5 pb-5">
+    <div className="min-w-[260px] text-center bg-zinc-700 rounded-lg mb-5 pb-5">
       {/* Each card links to the collection page by passing name prop */}
       <Link href={`/collection/${nft.name}`}>
         <Image
