@@ -66,7 +66,7 @@ export default function CollectionInfo({ salesData, nftData }: Props) {
     <div className="container flex flex-wrap mb-16">
       <div className="section-img flex grow justify-center">
         <Image
-          className="max-w-[300px]"
+          className="min-w-[250px] min-h-[250px]"
           src={nftData.contract.metadata.cached_thumbnail_url}
           width={200}
           height={200}
