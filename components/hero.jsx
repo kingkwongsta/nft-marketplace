@@ -46,8 +46,8 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="hero-right sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center">
-        <div className="hero-img rounded-lg pt-10 px-16 w-[500px] h-[650px] bg-zinc-700">
+      <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[650px] sm:max-lg:max-h-[400px] bg-zinc-700">
+        <div className="hero-img rounded-lg pt-10 px-16 w-[500px] ">
           <Image
             src={data[randomNum].metadata.thumbnail_url}
             width={300}
@@ -55,7 +55,7 @@ export default function Hero() {
             alt="heroImage"
             className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
           />
-          <div className="bg-zinc-700 rounded-lg h-[150px]">
+          <div className="bg-zinc-700 rounded-lg">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
               {data[randomNum].name.replace(/([A-Z])/g, " $1").trim()}
             </h3>
