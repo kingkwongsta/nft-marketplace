@@ -14,7 +14,7 @@ type Props = {
   nftData: {
     contract: {
       name: string;
-      medata: {
+      metadata: {
         cached_thumbnail_url: string;
         description: string;
       };
