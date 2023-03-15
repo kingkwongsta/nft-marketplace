@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-slate-500 p-6">
+    <nav className="flex items-center justify-between flex-wrap bg-slate-500 p-6 uppercase">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         {/* Logo Below */}
         {/* <svg
@@ -35,7 +35,7 @@ export default function Navigation() {
         </button>
       </div>
       <div className="w-full block lg:flex lg:items-center lg:w-auto lg:flex-row-reverse mx-[200px]">
-        <div className="text-4xl lg:flex-grow">
+        <div className="text-xl uppercase lg:flex-grow">
           <Link
             href="/popular/"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"

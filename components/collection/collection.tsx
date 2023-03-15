@@ -47,7 +47,7 @@ export default function Collection({ nftcollection }) {
   }
 
   return (
-    <div className="mx-36">
+    <div className="mx-36 mt-20">
       <div>
         {nftData === undefined ? (
           <p>Loading</p>
