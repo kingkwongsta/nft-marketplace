@@ -5,13 +5,14 @@ import data from "../pages/api/topNFTData";
 import Link from "next/link";
 
 export default function Hero() {
-  const [randomNum, setRandomNum] = useState(0);
+  const [randomNum, setRandomNum] = useState<number>(0);
 
   useEffect(() => {
     setRandomNum(Math.floor(Math.random() * 10));
   }, []);
 
-  const description = data[randomNum].metadata.description.split(".");
+  const description: Array<string> =
+    data[randomNum].metadata.description.split(".");
 
   return (
     <div className="hero lg:flex mt-36 mx-36 mb-20">
