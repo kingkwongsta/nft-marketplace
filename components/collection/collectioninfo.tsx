@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { decode } from "html-entities";
 
 type Props = {
   salesData: {
@@ -84,7 +85,7 @@ export default function CollectionInfo({ salesData, nftData }: Props) {
       <div className="section-info flex items-center justify-center grow mt-10 px-2 min-[940]:px-8">
         <div>
           <div className="px-12 text-center text-xl">
-            {nftData.contract.metadata.description}
+            {decode(nftData.contract.metadata.description)}
           </div>
         </div>
       </div>
